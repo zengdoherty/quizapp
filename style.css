@@ -4,8 +4,8 @@ body{
 
 h1{
 	color: white;
-	padding: 20px;
-	padding-top: 50px;
+	padding: 10px;
+	padding-top: 30px;
 }
 
 #main{
@@ -16,20 +16,21 @@ h1{
   bottom: 0;
   left: 0;
   width: 700px;
-  height: 700px;
+  height: 600px;
 
 }
 
 .button{
 	color: white;
-margin: 0 auto;
-float: right;
-	padding: 20px;
+  display: block;
+  max-width: 300px;
+  margin: auto;
+  padding: 15px;
 	background: green;
 }
 
 h3{
 	color: white;
 	text-align: center;
-	padding: 30px;
+	padding: 20px;
 }

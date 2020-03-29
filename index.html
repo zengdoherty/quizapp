@@ -46,15 +46,24 @@
         <div class="col-sm-4"><h3 id='team4_score'>0</h3></div>
         <div class="col-sm-4"><button onclick="addOne('team4_score')" type="button" class="button">+1</button></div>
       </div>
+
       <div class="row">
         <div class="col-sm-12"><h3 id="question"></h3></div>
       </div>
+<!-- /multi choice -->
+      <div class="row">
+      	<div class="col-sm-3"><h3 id="ans1"></h3></div>
+        <div class="col-sm-3"><h3 id="ans2"></h3></div>
+        <div class="col-sm-3"><h3 id="ans3"></h3></div>
+        <div class="col-sm-3"><h3 id="ans4"></h3></div>
+      </div>
+       <div class="row" id="Answer_Buttons">
+      	<div class="col-sm-3"><h3 id="ans1">A</h3></div>
+        <div class="col-sm-3"><h3 id="ans2">B</h3></div>
+        <div class="col-sm-3"><h3 id="ans3">C</h3></div>
+        <div class="col-sm-3"><h3 id="ans4">D</h3></div>
+      </div>
 
-
-
-<!--       <div class="row">
-        <div class="col-sm-12"><button onclick="getData()" type="button" class="button">Get Data</button></div>
-      </div> -->
       <div class="row">
         <div class="col-sm-12"><button onclick="tester()" type="button" class="button">Next Question</button></div>
       </div>
@@ -78,23 +87,33 @@ function getData(){
 	  .then(data => obj = data)
 	  .then(() => console.log(obj))
 
-
-	var s = JSON.stringify(obj)
-	console.log("Type of obj : "+typeof(typeof(answers)))
-
 }
 
 function tester(){
 	fetch('https://opentdb.com/api.php?amount=50')
   .then((response) => {
     return response.json();
-    console.log("Words"+response.results[0].category)
+    
   })
   .then((data) => {
     console.log(data);
     console.log("Question:  "+data.results[0].question)
     var q = data.results[0].question;
     document.getElementById('question').innerHTML = q;
+    if(data.results[0].type == "multiple"){
+    	document.getElementById('ans1').innerHTML = data.results[0].correct_answer;
+    	document.getElementById('ans2').innerHTML = data.results[0].incorrect_answers[0];
+    	document.getElementById('ans3').innerHTML = data.results[0].incorrect_answers[1];
+    	document.getElementById('ans4').innerHTML = data.results[0].incorrect_answers[2];
+
+		document.getElementById('Answer_Buttons').style.visibility = 'visible';
+
+    	console.log("Multiple")
+    }else if(data.results[0].type == "boolean"){
+    	document.getElementById('Answer_Buttons').style.visibility = 'hidden';
+    	console.log("Boolean")
+    }
+    
 
 
     
