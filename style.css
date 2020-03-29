@@ -1,0 +1,35 @@
+body{
+	background-color: blue;
+}
+
+h1{
+	color: white;
+	padding: 20px;
+	padding-top: 50px;
+}
+
+#main{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 700px;
+  height: 700px;
+
+}
+
+.button{
+	color: white;
+margin: 0 auto;
+float: right;
+	padding: 20px;
+	background: green;
+}
+
+h3{
+	color: white;
+	text-align: center;
+	padding: 30px;
+}
