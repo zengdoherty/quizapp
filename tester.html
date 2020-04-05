@@ -20,33 +20,30 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/grid/">
 
     <script type="text/javascript">
-var count = 1;
-      function createTeamRow(){
-        
+    var count = 1;
+
+    function createTeamRow(){     
         var newDiv = document.createElement('div');
         newDiv.id = 'newDiv';
         newDiv.classList.add('row');
         var attach = document.getElementById('main_container');
         var team = document.getElementById("team_name_field").value;
-        newDiv.innerHTML = '<div class="col-sm-4"><h3>'+team+'</h3></div><div class="col-sm-4"><h3 id="team'+count+'_score">0</h3></div><div class="col-sm-4"><button onclick="addOne("team1_score")" type="button" class="btn btn-outline-light" id="teamButt">+1</button></div>';
+        newDiv.innerHTML = '<div class="col-sm-4"><h3>'+team+'</h3></div><div class="col-sm-4"><h3 id="team'+count+'_score">0</h3></div><div class="col-sm-4"><button onclick="addOne('+"'team"+count+"_score'"+')" type="button" class="btn btn-outline-light" id="teamButt">+1</button></div>';
          count++;
         attach.appendChild(newDiv);
 
         var team = document.getElementById("team_name_field").value;
         document.getElementById("team_form").reset();
 
-      }
-
-
-      
+    }    
     </script>
 
   </head>
 
-  <body onload="setUp();">
+<body onload="setUp();">
 <div id="main">
-    <div class="container" id="main_container">
 
+    <div class="container" id="main_container"> 
       <!-- Form to create Teams-->
       <div class="row" id="form">
         <div class="col-sm-4">         
@@ -54,26 +51,24 @@ var count = 1;
             <div class="form-group">
               <label>Enter Team Name</label>
               <input class="form-control" id="team_name_field" placeholder="Team Name">
-            </div>
-            <button class="btn btn-primary" onclick="addTeam();return false">Submit</button>   
-            <button class="btn btn-primary" onclick="createTeamRow();return false">Team Row</button>         
+            </div> 
+            <button class="btn btn-primary" onclick="createTeamRow();return false">Submit</button>         
           </form>
         </div>
         <div class="col-sm-8"><div class="col-12"><h1>Friday Night Sippy Poos Quiz Night</h1></div> </div>
       </div>
+    </div> <!-- /container -->
 
 
-       </div> <!-- /container -->
-
-
-<div class="container" id="main_container">
+<div class="container" id="question_container">
       <div class="row">
-        <div class="col-sm-12"><h3 id="question"></h3></div>
+        <div class="col-sm-10" id="question_div"><h3 id="question"></h3></div>
+        <div class="col-sm-2"><button onclick="getData()" type="button" class="btn btn-outline-light">Next Question</button></div>
       </div>
 
       <div class="row">
         <div class="col-sm-2"><button type="button" class="btn btn-outline-light" id="butt">A</button></div>
-        <div class="col-sm-10"><h4 id="ans1"></h4></div>
+        <div class="col-sm-10" id="answer_text"><h4 id="ans1"></h4></div>
       </div>
       <div class="row">
         <div class="col-sm-2"><button type="button" class="btn btn-outline-light" id="butt">B</button></div>
@@ -94,77 +89,50 @@ var count = 1;
         <div class="col-sm-6"><h3 id="ans2">False</h3></div>
       </div>
 
-      <div class="row">
-        <div class="col-sm-12"><button onclick="tester()" type="button" class="button">Next Question</button></div>
-      </div>
-
   
     </div> <!-- /container -->
 
     <script type="text/javascript">
+
     	function addOne(team){
-     var foo = parseInt(document.getElementById(team).innerHTML);
-     foo = foo+1;
-     document.getElementById(team).innerHTML = foo;
+         var num = parseInt(document.getElementById(team).innerHTML);
+         num = num+1;
+         document.getElementById(team).innerHTML = num;
     	}
 
 
-function getData(){
-	var obj;
+      function getData(){
+      	fetch('https://opentdb.com/api.php?amount=50')
+        .then((response) => {
+          return response.json();
+          
+        })
+        .then((data) => {
+          console.log(data);
+          console.log("Question:  "+data.results[0].question)
+          var q = data.results[0].question;
+          document.getElementById('question').innerHTML = q;
+          if(data.results[0].type == "multiple"){
+          	document.getElementById('ans1').innerHTML = data.results[0].correct_answer;
+          	document.getElementById('ans2').innerHTML = data.results[0].incorrect_answers[0];
+          	document.getElementById('ans3').innerHTML = data.results[0].incorrect_answers[1];
+          	document.getElementById('ans4').innerHTML = data.results[0].incorrect_answers[2];
 
-	var answers = fetch('https://opentdb.com/api.php?amount=50')
-	  .then(res => res.json())
-	  .then(data => obj = data)
-	  .then(() => console.log(obj))
+      		// document.getElementById('Answer_Buttons').style.visibility = 'visible';
+          document.getElementById('true_false_buttons').style.visibility = 'hidden';
 
-}
-
-function tester(){
-	fetch('https://opentdb.com/api.php?amount=50')
-  .then((response) => {
-    return response.json();
-    
-  })
-  .then((data) => {
-    console.log(data);
-    console.log("Question:  "+data.results[0].question)
-    var q = data.results[0].question;
-    document.getElementById('question').innerHTML = q;
-    if(data.results[0].type == "multiple"){
-    	document.getElementById('ans1').innerHTML = data.results[0].correct_answer;
-    	document.getElementById('ans2').innerHTML = data.results[0].incorrect_answers[0];
-    	document.getElementById('ans3').innerHTML = data.results[0].incorrect_answers[1];
-    	document.getElementById('ans4').innerHTML = data.results[0].incorrect_answers[2];
-
-		// document.getElementById('Answer_Buttons').style.visibility = 'visible';
-    document.getElementById('true_false_buttons').style.visibility = 'hidden';
-
-    	console.log("Multiple")
-    }else if(data.results[0].type == "boolean"){
-      document.getElementById('ans1').innerHTML = "";
-      document.getElementById('ans2').innerHTML = "";
-      document.getElementById('ans3').innerHTML = "";
-      document.getElementById('ans4').innerHTML = "";
-    	document.getElementById('Answer_Buttons').style.visibility = 'hidden';
-      document.getElementById('true_false_buttons').style.visibility = 'visible';
-    	console.log("Boolean")
-    }
-    
-
-
-    
-  });
-}
-    </script>
-    <script type="text/javascript">
-      var teams = [];
-      function addTeam(){
-        console.log("Add Team Function called");
-        var team = document.getElementById("team_name_field").value;
-        teams.push(team);
-        document.getElementById("team_form").reset();
-        alert(teams);
-        console.log("Teams "+teams);
+          	console.log("Multiple")
+          }else if(data.results[0].type == "boolean"){
+            document.getElementById('ans1').innerHTML = "";
+            document.getElementById('ans2').innerHTML = "";
+            document.getElementById('ans3').innerHTML = "";
+            document.getElementById('ans4').innerHTML = "";
+          	document.getElementById('Answer_Buttons').style.visibility = 'hidden';
+            document.getElementById('true_false_buttons').style.visibility = 'visible';
+          	console.log("Boolean")
+          }
+             
+        });
       }
     </script>
 

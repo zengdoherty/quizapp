@@ -1,6 +1,24 @@
 body{
 	background-color: blue;
 }
+.row{
+  vertical-align: baseline;
+}
+#question_div{
+  vertical-align: middle;
+   display : table-cell;
+}
+#answer_text{
+  text-align: left;
+  vertical-align: middle;
+   display : table-cell;
+}
+#ans1{
+vertical-align: middle;
+padding: 12px;
+
+
+}
 
 h1{
   text-align: center;
@@ -9,9 +27,27 @@ h1{
 	padding-top: 30px;
 }
 
+h4{
+  color: white;
+}
+
+h3{ 
+  vertical-align: middle;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+h4{
+  vertical-align: middle;
+}
+
 form{
   color: white;
 }
+#question{
+  vertical-align: baseline;
+}
+
 
 #main{
   position: absolute;
@@ -20,9 +56,14 @@ form{
   right: 0;
   bottom: 0;
   left: 0;
-  width: 1000px;
-  height: 800px;
+  width: 100%;
+  height: 100%;
+}
 
+#main_container{
+  width: 100%;
+  min-height: 500px;
+  padding: 20px;
 }
 
 .button{
@@ -31,22 +72,8 @@ color: white;
   max-width: 300px;
   margin: auto;
   padding: 15px;
-  background: green;
+  /*background: green;*/
   text-align: center
-}
-h4{
-  color: white;
-}
-
-h3{
-	color: white;
-	text-align: center;
-	padding: 20px;
-}
-
-.btn btn-outline-light{
-  padding: 10px;
-  color: green;
 }
 
 #butt{
