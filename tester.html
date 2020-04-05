@@ -17,21 +17,27 @@
 
     <title>Friday Night Sippy Poos Quiz</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/grid/">
 
     <script type="text/javascript">
+var count = 1;
       function createTeamRow(){
+        
         var newDiv = document.createElement('div');
-        var innerDivTeam = document.createElement('div');
         newDiv.id = 'newDiv';
         newDiv.classList.add('row');
         var attach = document.getElementById('main_container');
-        var text = document.createTextNode('Graeme');
-        newDiv.appendChild(text);
-        
+        var team = document.getElementById("team_name_field").value;
+        newDiv.innerHTML = '<div class="col-sm-4"><h3>'+team+'</h3></div><div class="col-sm-4"><h3 id="team'+count+'_score">0</h3></div><div class="col-sm-4"><button onclick="addOne("team1_score")" type="button" class="btn btn-outline-light" id="teamButt">+1</button></div>';
+         count++;
         attach.appendChild(newDiv);
+
+        var team = document.getElementById("team_name_field").value;
+        document.getElementById("team_form").reset();
+
       }
+
+
       
     </script>
 
@@ -43,9 +49,8 @@
 
       <!-- Form to create Teams-->
       <div class="row" id="form">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4"> 
-          <form id="team_form">
+        <div class="col-sm-4">         
+           <form id="team_form">
             <div class="form-group">
               <label>Enter Team Name</label>
               <input class="form-control" id="team_name_field" placeholder="Team Name">
@@ -54,40 +59,14 @@
             <button class="btn btn-primary" onclick="createTeamRow();return false">Team Row</button>         
           </form>
         </div>
-        <div class="col-sm-4"></div>
+        <div class="col-sm-8"><div class="col-12"><h1>Friday Night Sippy Poos Quiz Night</h1></div> </div>
       </div>
 
 
+       </div> <!-- /container -->
 
 
-      <div class="row"> 
-        <div class="col-12"><h1>Friday Night Sippy Poos Quiz Night</h1></div>       
-      </div>
-
-      <div class="row" id="add_teams">
-        <div class="col-sm-4"><h3>Team 1</h3></div>
-        <div class="col-sm-4"><h3 id="team1_score">0</h3></div>
-        <div class="col-sm-4"><button onclick="addOne('team1_score')" type="button" class="btn btn-outline-light" id="teamButt">+1</button></div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-4"><h3>Team 2</h3></div>
-        <div class="col-sm-4"><h3 id='team2_scrore'>0</h3></div>
-        <div class="col-sm-4"><button onclick="addOne('team2_scrore')" type="button" class="btn btn-outline-light" id="teamButt">+1</button></div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-4"><h3>Team 3</h3></div>
-        <div class="col-sm-4"><h3 id='team3_score'>0</h3></div>
-        <div class="col-sm-4"><button onclick="addOne('team3_score')" type="button" class="btn btn-outline-light" id="teamButt">+1</button></div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-4"><h3>Team 4</h3></div>
-        <div class="col-sm-4"><h3 id='team4_score'>0</h3></div>
-        <div class="col-sm-4"><button onclick="addOne('team4_score')" type="button" class="btn btn-outline-light" id="teamButt">+1</button></div>
-      </div>
-
+<div class="container" id="main_container">
       <div class="row">
         <div class="col-sm-12"><h3 id="question"></h3></div>
       </div>
