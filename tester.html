@@ -8,10 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script type="text/javascript">
       function setUp(){
-        // document.getElementById('Answer_Buttons').style.visibility = 'hidden';
+       //  document.getElementById('question_container').style.visibility = 'hidden';
         document.getElementById('true_false_buttons').style.visibility = 'hidden';
-      }
-      
+      } 
     </script>
 
 
@@ -55,12 +54,13 @@
             <button class="btn btn-primary" onclick="createTeamRow();return false">Submit</button>         
           </form>
         </div>
-        <div class="col-sm-8"><div class="col-12"><h1>Friday Night Sippy Poos Quiz Night</h1></div> </div>
+        <div class="col-sm-7"><div class="col-12"><h1>Friday Night Sippy Poos Quiz Night</h1></div> </div>
+        <div class="col-sm-1"><button type="button" class="btn btn-outline-light">Start</button></div>
       </div>
     </div> <!-- /container -->
 
 
-<div class="container" id="question_container">
+   <div class="container" id="question_container">
       <div class="row">
         <div class="col-sm-10" id="question_div"><h3 id="question"></h3></div>
         <div class="col-sm-2"><button onclick="getData()" type="button" class="btn btn-outline-light">Next Question</button></div>
@@ -84,13 +84,13 @@
       </div>
 
 
-       <div class="row" id="true_false_buttons">
+      <div class="row" id="true_false_buttons">
         <div class="col-sm-6"><h3 id="ans1">True</h3></div>
         <div class="col-sm-6"><h3 id="ans2">False</h3></div>
-      </div>
+      </div> 
+  </div> <!-- /question_container -->
 
-  
-    </div> <!-- /container -->
+
 
     <script type="text/javascript">
 
@@ -137,7 +137,7 @@
     </script>
 
  </div>
-  </body>
+</body>
 </html>
 
 
