@@ -16,8 +16,6 @@
 
   }    
 
-
-
    function addOne(team){
      var num = parseInt(document.getElementById(team).innerHTML);
      num = num+1;

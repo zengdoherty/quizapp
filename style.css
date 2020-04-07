@@ -1,57 +1,59 @@
-body{
-	background-color: blue;
+body {
+  background-color: blue;
 }
-.row{
+
+.row {
   vertical-align: baseline;
 }
-#question_div{
+
+#question_div {
   vertical-align: middle;
-   display : table-cell;
+  display: table-cell;
 }
-#answer_text{
+
+#answer_text {
   text-align: left;
   vertical-align: middle;
-   display : table-cell;
-   padding: 12px;
-}
-#ans{
-vertical-align: middle;
-padding: 12px;
-
-
+  display: table-cell;
+  padding: 12px;
 }
 
-h1{
+#ans {
+  vertical-align: middle;
+  padding: 12px;
+}
+
+h1 {
   text-align: center;
-	color: white;
-	padding: 10px;
-	padding-top: 30px;
+  color: white;
+  padding: 10px;
+  padding-top: 30px;
 }
 
-h4{
+h4 {
   color: white;
 }
 
-h3{ 
+h3 {
   vertical-align: middle;
   color: white;
   text-align: center;
   padding: 20px;
 }
-h4{
+
+h4 {
   vertical-align: middle;
 }
 
-form{
+form {
   color: white;
-
 }
-#question{
+
+#question {
   vertical-align: baseline;
 }
 
-
-#main{
+#main {
   position: absolute;
   margin: auto;
   top: 0;
@@ -62,16 +64,15 @@ form{
   height: 100%;
 }
 
-#main_container{
+#main_container {
   width: 100%;
   min-height: 500px;
   padding: 20px;
-
 }
 
-.button{
-   margin: 10px;
-   color: white;
+.button {
+  margin: 10px;
+  color: white;
   display: block;
   max-width: 300px;
   margin: auto;
@@ -80,20 +81,23 @@ form{
   text-align: center
 }
 
-#butt1{
-  margin: 10px;
-}
-#butt2{
-  margin: 10px;
-}
-#butt3{
-  margin: 10px;
-}
-#butt4{
+#butt1 {
   margin: 10px;
 }
 
-#teamButt{
+#butt2 {
+  margin: 10px;
+}
+
+#butt3 {
+  margin: 10px;
+}
+
+#butt4 {
+  margin: 10px;
+}
+
+#teamButt {
   margin: 15px;
   align-items: center;
 }
