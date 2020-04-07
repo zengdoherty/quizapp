@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script type="text/javascript">
       function setUp(){
-       //  document.getElementById('question_container').style.visibility = 'hidden';
+        document.getElementById('question_container').style.visibility = 'hidden';
         document.getElementById('true_false_buttons').style.visibility = 'hidden';
       } 
     </script>
@@ -55,7 +55,7 @@
           </form>
         </div>
         <div class="col-sm-7"><div class="col-12"><h1>Friday Night Sippy Poos Quiz Night</h1></div> </div>
-        <div class="col-sm-1"><button type="button" class="btn btn-outline-light">Start</button></div>
+        <div class="col-sm-1"><button onclick="startGame()"type="button" class="btn btn-outline-light">Start</button></div>
       </div>
     </div> <!-- /container -->
 
@@ -66,27 +66,35 @@
         <div class="col-sm-2"><button onclick="getData()" type="button" class="btn btn-outline-light">Next Question</button></div>
       </div>
 
+
+
+
       <div class="row">
-        <div class="col-sm-2"><button type="button" class="btn btn-outline-light" id="butt">A</button></div>
+        <div class="col-sm-2 ansbtn"><button type="button" class="btn btn-outline-light" id="butt1">A</button></div>
         <div class="col-sm-10" id="answer_text"><h4 id="ans1"></h4></div>
       </div>
+
       <div class="row">
-        <div class="col-sm-2"><button type="button" class="btn btn-outline-light" id="butt">B</button></div>
+        <div class="col-sm-2 ansbtn"><button type="button" class="btn btn-outline-light" id="butt2">B</button></div>
         <div class="col-sm-10"><h4 id="ans2"></h4></div>
       </div>
+
       <div class="row">
-        <div class="col-sm-2"><button type="button" class="btn btn-outline-light" id="butt">C</button></div>
+        <div class="col-sm-2"><button type="button" class="btn btn-outline-light" id="butt3">C</button></div>
         <div class="col-sm-10"><h4 id="ans3"></h4></div>
       </div>
+
       <div class="row">
-        <div class="col-sm-2"><button type="button" class="btn btn-outline-light" id="butt">D</button></div>
+        <div class="col-sm-2"><button type="button" class="btn btn-outline-light" id="butt4">D</button></div>
         <div class="col-sm-10"><h4 id="ans4"></h4></div>
       </div>
 
 
+
+
       <div class="row" id="true_false_buttons">
-        <div class="col-sm-6"><h3 id="ans1">True</h3></div>
-        <div class="col-sm-6"><h3 id="ans2">False</h3></div>
+        <div class="col-sm-6"><h1 id="ans1"><button type="button" class="btn btn-outline-light" id="butt">True</button></h1></div>
+        <div class="col-sm-6"><h1 id="ans2"><button type="button" class="btn btn-outline-light" id="butt">False</button></h1></div>
       </div> 
   </div> <!-- /question_container -->
 
@@ -100,7 +108,6 @@
          document.getElementById(team).innerHTML = num;
     	}
 
-
       function getData(){
       	fetch('https://opentdb.com/api.php?amount=50')
         .then((response) => {
@@ -113,16 +120,34 @@
           var q = data.results[0].question;
           document.getElementById('question').innerHTML = q;
           if(data.results[0].type == "multiple"){
+            document.getElementById('question_container').style.visibility = 'visible';
+            document.getElementById('true_false_buttons').style.visibility = 'hidden';
+            document.getElementById('butt1').style.visibility = 'visible';
+            document.getElementById('butt2').style.visibility = 'visible';
+            document.getElementById('butt3').style.visibility = 'visible';
+            document.getElementById('butt4').style.visibility = 'visible';
+
+
+            var answers = [];
+            answers.push()
+
+
+
+
+
           	document.getElementById('ans1').innerHTML = data.results[0].correct_answer;
           	document.getElementById('ans2').innerHTML = data.results[0].incorrect_answers[0];
           	document.getElementById('ans3').innerHTML = data.results[0].incorrect_answers[1];
           	document.getElementById('ans4').innerHTML = data.results[0].incorrect_answers[2];
 
-      		// document.getElementById('Answer_Buttons').style.visibility = 'visible';
-          document.getElementById('true_false_buttons').style.visibility = 'hidden';
-
+      	
           	console.log("Multiple")
           }else if(data.results[0].type == "boolean"){
+            document.getElementById('true_false_buttons').style.visibility = 'visible';
+            document.getElementById('butt1').style.visibility = 'hidden';
+            document.getElementById('butt2').style.visibility = 'hidden';
+            document.getElementById('butt3').style.visibility = 'hidden';
+            document.getElementById('butt4').style.visibility = 'hidden';
             document.getElementById('ans1').innerHTML = "";
             document.getElementById('ans2').innerHTML = "";
             document.getElementById('ans3').innerHTML = "";
@@ -133,6 +158,15 @@
           }
              
         });
+      }
+
+      function shuffleAnswers(){
+        
+      }
+
+      function startGame(){
+          document.getElementById('question_container').style.visibility = 'visible';
+          getData();
       }
     </script>
 

@@ -12,8 +12,9 @@ body{
   text-align: left;
   vertical-align: middle;
    display : table-cell;
+   padding: 12px;
 }
-#ans1{
+#ans{
 vertical-align: middle;
 padding: 12px;
 
@@ -43,6 +44,7 @@ h4{
 
 form{
   color: white;
+
 }
 #question{
   vertical-align: baseline;
@@ -64,10 +66,12 @@ form{
   width: 100%;
   min-height: 500px;
   padding: 20px;
+
 }
 
 .button{
-color: white;
+   margin: 10px;
+   color: white;
   display: block;
   max-width: 300px;
   margin: auto;
@@ -76,7 +80,16 @@ color: white;
   text-align: center
 }
 
-#butt{
+#butt1{
+  margin: 10px;
+}
+#butt2{
+  margin: 10px;
+}
+#butt3{
+  margin: 10px;
+}
+#butt4{
   margin: 10px;
 }
 
