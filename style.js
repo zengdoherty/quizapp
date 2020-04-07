@@ -23,6 +23,7 @@
    }
 
    let jsondata;
+
    function getData(){
      fetch('https://opentdb.com/api.php?amount=50')
      .then((response) => {
@@ -51,6 +52,7 @@
   }
 
   var question_count = 0;
+
   function nextQuestion(){
     //Reset Button Colors after each question
     var but1 = document.getElementById('butt1');
@@ -157,9 +159,11 @@ function checkAnswer(ans) {
 
   function trueOrFalse(guess){
     if(guess === jsondata.results[question_count].correct_answer){
-      alert("That is TRUE !!!! "+guess+" == " +jsondata.results[question_count].correct_answer)
+      // alert("That is TRUE !!!! "+guess+" == " +jsondata.results[question_count].correct_answer)
+      alertify.success('True');
     }else{
-      alert("Wrong !!!! "+guess+" == " +jsondata.results[question_count].correct_answer)
+      // alert("Wrong !!!! "+guess+" == " +jsondata.results[question_count].correct_answer)
+      alertify.warning('FALSE');
     }
     question_count++;
     setTimeout(nextQuestion, 3000)
