@@ -119,8 +119,10 @@ function checkAnswer(ans) {
         guess = document.getElementById("ans1").innerText;
         if (guess === correct) {
             btnA.style.backgroundColor = '#7CFC00';
+            alertify.success('Correct !!!');
         } else {
             btnA.style.backgroundColor = '#FF0000';
+            alertify.error('Wrong!!!');
         }
     }
     if (ans == 'B') {
@@ -128,9 +130,10 @@ function checkAnswer(ans) {
         guess = document.getElementById("ans2").innerText;
         if (guess === correct) {
             btnB.style.backgroundColor = '#7CFC00';
-
+            alertify.success('Correct !!!');
         } else {
             btnB.style.backgroundColor = '#FF0000';
+            alertify.error('Wrong!!!');
         }
     }
     if (ans == 'C') {
@@ -138,9 +141,10 @@ function checkAnswer(ans) {
         guess = document.getElementById("ans3").innerText;
         if (guess === correct) {
             btnC.style.backgroundColor = '#7CFC00';
-
+            alertify.success('Correct !!!');
         } else {
             btnC.style.backgroundColor = '#FF0000';
+            alertify.error('Wrong!!!');
         }
     }
     if (ans == 'D') {
@@ -148,8 +152,10 @@ function checkAnswer(ans) {
         guess = document.getElementById("ans4").innerText;
         if (guess === correct) {
             btnD.style.backgroundColor = '#7CFC00';
+            alertify.success('Correct !!!');
         } else {
             btnD.style.backgroundColor = '#FF0000';
+            alertify.error('Wrong!!!');
         }
     }
     question_count++;
@@ -160,10 +166,10 @@ function checkAnswer(ans) {
   function trueOrFalse(guess){
     if(guess === jsondata.results[question_count].correct_answer){
       // alert("That is TRUE !!!! "+guess+" == " +jsondata.results[question_count].correct_answer)
-      alertify.success('True');
+      alertify.success('True, Well Done !!!');
     }else{
       // alert("Wrong !!!! "+guess+" == " +jsondata.results[question_count].correct_answer)
-      alertify.warning('FALSE');
+      alertify.error('False, You Idiot !!!');
     }
     question_count++;
     setTimeout(nextQuestion, 3000)
