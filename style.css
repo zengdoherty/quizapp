@@ -26,8 +26,20 @@ body {
 h1 {
   text-align: center;
   color: white;
-  padding: 10px;
-  padding-top: 30px;
+  padding: 5px;
+
+}
+
+#game_title{
+  border-radius: 20px;
+  background: white;
+    vertical-align: middle;
+  color: white;
+  text-align: center;
+  
+}
+#title{
+  color: blue;
 }
 
 h4 {
@@ -48,6 +60,13 @@ h4 {
 form {
   color: white;
 }
+
+#start_div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 #question {
   vertical-align: baseline;
@@ -79,6 +98,10 @@ form {
   padding: 15px;
   /*background: green;*/
   text-align: center
+}
+
+#start_button{
+
 }
 
 #butt1 {

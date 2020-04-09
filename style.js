@@ -1,4 +1,4 @@
-
+     
   var count = 1;
 
   function createTeamRow(){     
@@ -7,7 +7,7 @@
     newDiv.classList.add('row');
     var attach = document.getElementById('main_container');
     var team = document.getElementById("team_name_field").value;
-    newDiv.innerHTML = '<div class="col-sm-4"><h3>'+team+'</h3></div><div class="col-sm-4"><h3 id="team'+count+'_score">0</h3></div><div class="col-sm-4"><button onclick="addOne('+"'team"+count+"_score'"+')" type="button" class="btn btn-outline-light" id="teamButt">+1</button></div>';
+    newDiv.innerHTML = '<div class="col-sm-4"><h3>'+team+'</h3></div><div class="col-sm-4"><h3 id="team'+count+'_score">0</h3></div><div class="col-sm-4" id="start_div"><button onclick="addOne('+"'team"+count+"_score'"+')" type="button" class="btn btn-outline-light" id="teamButt">+1</button></div>';
     count++;
     attach.appendChild(newDiv);
 
@@ -15,6 +15,12 @@
     document.getElementById("team_form").reset();
 
   }    
+
+  function setUp(){
+    document.getElementById('question_container').style.visibility = 'hidden';
+    document.getElementById('true_false_buttons').style.visibility = 'hidden';
+  } 
+
 
    function addOne(team){
      var num = parseInt(document.getElementById(team).innerHTML);
