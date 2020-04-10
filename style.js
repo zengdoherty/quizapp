@@ -53,11 +53,16 @@
       arra1[index] = temp;
     }
     console.log(arra1);
-    console.log("Correct Answer: "+jsondata.results[question_count].correct_answer)
+    console.log("Correct Answer: "+jsondata.results[question_count].correct_answer+ " Count No = "+question_count)
     return arra1;
   }
 
   var question_count = 0;
+
+  function add_to_count(){
+    question_count++;
+    alert("Count is = "+question_count)
+  }
 
   function nextQuestion(){
     //Reset Button Colors after each question
