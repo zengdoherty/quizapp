@@ -1,18 +1,28 @@
 
 
 body {
-  background-color: black;
+  background-color: #33334d;
+  font-family: 'Source Code Pro', monospace;
 }
-
+.form-control{
+	background: #33334d;
+	border:2px solid white;
+}
 
 #question_div {
   vertical-align: middle;
   display: table-cell;
 }
 
+#new_div{
+	background-color:rgb(255,0,0);
+}
+
 #dropdownMenuButton{
-	background: black;
+	margin-right: 20px;
+	background: #33334d;
 	color: white;
+	border: 2px solid white;
 
 }
 #answer_text {
@@ -21,10 +31,19 @@ body {
   vertical-align: middle;
   display: table-cell;
   padding: 12px;
+  
+}
+.dropdown-menu{
+	background: #33334d;
+	color: white;
+	border: 2px solid blue;
 }
 #categories{
 
    
+}
+#team_form{
+	color: white;
 }
 
 #ans {
@@ -41,16 +60,21 @@ h1 {
 
 #game_title{
   border-radius: 20px;
-  background: white;
+  background: #33334d;
   vertical-align: middle;
   color: white;
   text-align: center;
   
 }
+#start_btn{
+	color: white;
+	border: 2px solid white;
+}
 
 #title{
   font-style: oblique;
-  color: black;
+  color: white;
+
 }
 
 h4 {
@@ -132,4 +156,6 @@ h5{
 #teamButt {
   margin: 15px;
   align-items: center;
+  border: 2px solid white;
+  color: white;
 }
