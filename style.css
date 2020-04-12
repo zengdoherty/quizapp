@@ -3,6 +3,7 @@
 body {
   background-color: #33334d;
   font-family: 'Source Code Pro', monospace;
+  font-family: 'Righteous', cursive;
 }
 .form-control{
 	background: #33334d;
@@ -13,13 +14,16 @@ body {
   vertical-align: middle;
   display: table-cell;
 }
+#start_div{
+  margin-top: 20px;
+}
 
 #new_div{
 	background-color:rgb(255,0,0);
 }
 
 #dropdownMenuButton{
-	margin-right: 20px;
+	margin-top: : 20px;
 	background: #33334d;
 	color: white;
 	border: 2px solid white;
@@ -36,10 +40,12 @@ body {
 .dropdown-menu{
 	background: #33334d;
 	color: white;
-	border: 2px solid blue;
+	border: 2px solid white;
 }
 #categories{
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
    
 }
 #team_form{
@@ -54,7 +60,7 @@ body {
 h1 {
   text-align: center;
   color: white;
-  padding: 5px;
+
 
 }
 
