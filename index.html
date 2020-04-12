@@ -1,47 +1,81 @@
 <!doctype html>
 <html lang="en">
    <head>
-        <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
-        <!-- CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
-        <!-- Default theme -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
-        <!-- Semantic UI theme -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
-        <!-- Bootstrap theme -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
-          <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+      <!-- CSS -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+      <!-- Default theme -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+      <!-- Semantic UI theme -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
+      <!-- Bootstrap theme -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <!-- Required meta tags -->
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <script src="style.js"></script>
-      <title>Friday Night Sippy Poos Quiz</title>
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <title>Quiz!</title>
       <link rel="stylesheet" type="text/css" href="style.css">
-      <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/grid/">
+      <script src="style.js"></script>
    </head>
    <body onload="setUp();">
-      <div id="main">
+  <!--     Drop Down for categories -->
+      <div class="row">
+         <div class="col-sm-2" id="start_div">
+            <div class="dropdown">
+               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Choose Category
+               </button>
+               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" id="cat_1" onclick="pickCategory(9)">General Knowledge</a>
+                  <a class="dropdown-item" id="cat_2" onclick="pickCategory(10)">Entertainment: Books</a>
+                  <a class="dropdown-item" id="cat_3" onclick="pickCategory(11)">Entertainment: Film</a>
+                  <a class="dropdown-item" id="cat_4" onclick="pickCategory(12)">Entertainment: Music</a>
+                  <a class="dropdown-item" id="cat_5" onclick="pickCategory(13)">Entertainment: Musical & Theatre</a>
+                  <a class="dropdown-item" id="cat_6" onclick="pickCategory(14)">Entertainment: Television</a>
+                  <a class="dropdown-item" id="cat_7" onclick="pickCategory(15)">Entertainment: Video Games</a>
+                  <a class="dropdown-item" id="cat_8" onclick="pickCategory(16)">Entertainment: Board Games</a>
+                  <a class="dropdown-item" id="cat_9" onclick="pickCategory(17)">Science & Nature</a>
+                  <a class="dropdown-item" id="cat_10" onclick="pickCategory(18)">Science: Computers</a>
+                  <a class="dropdown-item" id="cat_11" onclick="pickCategory(19)">Science: Mathematics</a>
+                  <a class="dropdown-item" id="cat_12" onclick="pickCategory(20)">Mythology</a>
+                  <a class="dropdown-item" id="cat_13" onclick="pickCategory(21)">Sports</a>
+                  <a class="dropdown-item" id="cat_14" onclick="pickCategory(22)">Geography</a>
+                  <a class="dropdown-item" id="cat_15" onclick="pickCategory(23)">History</a>
+                  <a class="dropdown-item" id="cat_16" onclick="pickCategory(24)">Politics</a>
+                  <a class="dropdown-item" id="cat_17" onclick="pickCategory(25)">Art</a>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-10" id="categories">
+           <!--  <h5>Category:</h5> -->
+            <h5 id="category_title"></h5>
+         </div>
+      </div>
 
+      <div id="main">
          <div class="container" id="main_container">
             <!-- Form to create Teams-->
-            <div class="row" id="form">
+            <div class="row" id="top_bar">
                <div class="col-sm-4">
                   <form id="team_form">
                      <div class="form-group">
                         <label>Enter Team Name</label>
                         <input class="form-control" id="team_name_field" placeholder="Team Name">
                      </div>
-                     <button class="btn btn-primary" onclick="createTeamRow();return false">Submit</button>         
+                     <button class="btn btn-primary" onclick="createTeamRow();return false">Submit</button>  
                   </form>
                </div>
-               <div class="col-sm-7">
+               <div class="col-sm-7" id="start_div">
                   <div class="col-12" id="game_title">
-                     <h1 id="title">Friday Night Sippy Poos Quiz Night !!!</h1>
+                     <h1 id="title">Friday Night Sippy Poos <br>Big Fat Quiz !!!</h1>
                   </div>
                </div>
                <div class="col-sm-1" id="start_div"><button onclick="startGame()"type="button" class="btn btn-outline-light">Start</button></div>
             </div>
          </div>
-
          <!-- /container -->
          <div class="container" id="question_container">
             <div class="row">
@@ -50,7 +84,6 @@
                </div>
                <div class="col-sm-2" id="start_div"><button onclick="add_to_count(); nextQuestion()" type="button" class="btn btn-outline-light">Next Question</button></div>
             </div>
-
             <div class="row">
                <div class="col-sm-2"><button onclick="checkAnswer('A')" type="button" class="btn btn-outline-light" id="butt1">A</button></div>
                <div class="col-sm-10" id="answer_text">
@@ -75,8 +108,6 @@
                   <h4 id="ans4"></h4>
                </div>
             </div>
-
-            
             <div class="row" id="true_false_buttons">
                <div class="col-sm-6">
                   <h1 id="ans1"><button onclick="trueOrFalse('True')" type="button" class="btn btn-outline-light" id="butt">True</button></h1>
@@ -88,5 +119,10 @@
          </div>
          <!-- /question_container -->
       </div>
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
    </body>
 </html>

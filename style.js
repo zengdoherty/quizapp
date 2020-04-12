@@ -31,7 +31,7 @@
    let jsondata;
 
    function getData(){
-     fetch('https://opentdb.com/api.php?amount=50')
+     fetch(url)
      .then((response) => {
       return response.json();          
     })
@@ -61,7 +61,7 @@
 
   function add_to_count(){
     question_count++;
-    alert("Count is = "+question_count)
+    //alert("Count is = "+question_count)
   }
 
   function nextQuestion(){
@@ -133,7 +133,9 @@ function checkAnswer(ans) {
             alertify.success('Correct !!!');
         } else {
             btnA.style.backgroundColor = '#FF0000';
+            alertify.message("Answer: "+correct);
             alertify.error('Wrong!!!');
+            
         }
     }
     if (ans == 'B') {
@@ -144,7 +146,9 @@ function checkAnswer(ans) {
             alertify.success('Correct !!!');
         } else {
             btnB.style.backgroundColor = '#FF0000';
+            alertify.message("Answer: "+correct);
             alertify.error('Wrong!!!');
+             
         }
     }
     if (ans == 'C') {
@@ -155,7 +159,9 @@ function checkAnswer(ans) {
             alertify.success('Correct !!!');
         } else {
             btnC.style.backgroundColor = '#FF0000';
+            alertify.message("Answer: "+correct);
             alertify.error('Wrong!!!');
+             
         }
     }
     if (ans == 'D') {
@@ -166,7 +172,9 @@ function checkAnswer(ans) {
             alertify.success('Correct !!!');
         } else {
             btnD.style.backgroundColor = '#FF0000';
+            alertify.message("Answer: "+correct);
             alertify.error('Wrong!!!');
+
         }
     }
     question_count++;
@@ -190,3 +198,68 @@ function checkAnswer(ans) {
     document.getElementById('question_container').style.visibility = 'visible';
     getData();
   }
+
+  var url = "https://opentdb.com/api.php?amount=50";
+  function pickCategory(cat){
+    var x;
+    url = "https://opentdb.com/api.php?amount=50&category="+cat;
+    if(cat === 9){
+      x = document.getElementById("cat_1").textContent;
+    }
+    else if(cat === 10){
+      x = document.getElementById("cat_2").textContent;
+    }
+    else if(cat === 11){
+      x = document.getElementById("cat_3").textContent;
+    }
+    else if(cat === 12){
+      x = document.getElementById("cat_4").textContent;
+    }
+    else if(cat === 13){
+      x = document.getElementById("cat_5").textContent;
+    }
+    else if(cat === 14){
+      x = document.getElementById("cat_6").textContent;
+    }
+    else if(cat === 15){
+      x = document.getElementById("cat_7").textContent;
+    }
+    else if(cat === 16){
+      x = document.getElementById("cat_8").textContent;
+    }
+    else if(cat === 17){
+      x = document.getElementById("cat_9").textContent;
+    }
+    else if(cat === 18){
+      x = document.getElementById("cat_10").textContent;
+    }
+    else if(cat === 19){
+      x = document.getElementById("cat_11").textContent;
+    }
+    else if(cat === 20){
+      x = document.getElementById("cat_12").textContent;
+    }
+    else if(cat === 21){
+      x = document.getElementById("cat_13").textContent;
+    }
+    else if(cat === 22){
+      x = document.getElementById("cat_14").textContent;
+    }
+    else if(cat === 23){
+      x = document.getElementById("cat_15").textContent;
+    }
+    else if(cat === 24){
+      x = document.getElementById("cat_16").textContent;
+    }
+    else if(cat === 25){
+      x = document.getElementById("cat_17").textContent;
+    }
+
+    document.getElementById('category_title').innerHTML = x;
+
+  }
+
+
+
+
+
