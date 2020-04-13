@@ -2,8 +2,7 @@
 
 body {
   background-color: #33334d;
-  font-family: 'Source Code Pro', monospace;
-  font-family: 'Righteous', cursive;
+font-family: 'Concert One', cursive;
 }
 .form-control{
 	background: #33334d;
@@ -24,7 +23,7 @@ body {
 }
 
 #new_div{
-	background-color:rgb(255,0,0);
+	
 }
 
 #dropdownMenuButton{
@@ -109,6 +108,7 @@ h4 {
   vertical-align: middle;
 }
 h5{
+
 	color: white;
 	display: inline;
 	padding-top: 10px;
