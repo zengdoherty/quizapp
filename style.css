@@ -9,13 +9,18 @@ body {
 	background: #33334d;
 	border:2px solid white;
 }
+#team_name{
+  color: red;
+  text-shadow: 1px 1px white;
+}
 
 #question_div {
   vertical-align: middle;
   display: table-cell;
+  border-bottom: 1px solid white;
 }
 #start_div{
-  margin-top: 20px;
+ 
 }
 
 #new_div{
@@ -35,6 +40,7 @@ body {
   vertical-align: middle;
   display: table-cell;
   padding: 12px;
+  border-bottom: 1px solid white;
   
 }
 .dropdown-menu{
@@ -60,6 +66,7 @@ body {
 h1 {
   text-align: center;
   color: white;
+  text-shadow: 2px 2px red;
 
 
 }
@@ -75,6 +82,10 @@ h1 {
 #start_btn{
 	color: white;
 	border: 2px solid white;
+}
+
+#ans_btn{
+  border-bottom: 1px solid white;
 }
 
 #title{
@@ -128,16 +139,7 @@ h5{
   padding: 20px;
 }
 
-.button {
-  margin: 10px;
-  color: white;
-  display: block;
-  max-width: 300px;
-  margin: auto;
-  padding: 15px;
-  /*background: green;*/
-  text-align: center
-}
+
 
 #start_button{
 
@@ -145,6 +147,7 @@ h5{
 
 #butt1 {
   margin: 10px;
+  border-bottom: 1px solid white;
 }
 
 #butt2 {
@@ -160,7 +163,7 @@ h5{
 }
 
 #teamButt {
-  margin: 15px;
+  
   align-items: center;
   border: 2px solid white;
   color: white;

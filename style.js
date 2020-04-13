@@ -7,7 +7,7 @@
     newDiv.classList.add('row');
     var attach = document.getElementById('main_container');
     var team = document.getElementById("team_name_field").value;
-    newDiv.innerHTML = '<div class="col-sm-4"><h3>'+team+'</h3></div><div class="col-sm-4"><h3 id="team'+count+'_score">0</h3></div><div class="col-sm-4" id="start_div"><button onclick="addOne('+"'team"+count+"_score'"+')" type="button" class="btn btn-outline-light" id="teamButt">+1</button></div>';
+    newDiv.innerHTML = '<div class="col-sm-4"><h3 id="team_name">'+team+'</h3></div><div class="col-sm-4"><h3 id="team'+count+'_score">0</h3></div><div class="col-sm-4" id="start_div"><button onclick="addOne('+"'team"+count+"_score'"+')" type="button" class="btn btn-outline-light" id="teamButt">+1</button></div>';
     count++;
     attach.appendChild(newDiv);
 
@@ -70,10 +70,10 @@
     var but2 = document.getElementById('butt2');
     var but3 = document.getElementById('butt3');
     var but4 = document.getElementById('butt4');
-    but1.style.backgroundColor = "blue"; 
-    but2.style.backgroundColor = "blue"; 
-    but3.style.backgroundColor = "blue"; 
-    but4.style.backgroundColor = "blue"; 
+    but1.style.backgroundColor = "#33334d"; 
+    but2.style.backgroundColor = "#33334d"; 
+    but3.style.backgroundColor = "#33334d"; 
+    but4.style.backgroundColor = "#33334d"; 
 
     var q = jsondata.results[question_count].question;
     if(jsondata.results[question_count].type == "multiple"){
