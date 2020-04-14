@@ -8,7 +8,7 @@ function createTeamRow() {
     newDiv.classList.add('row');
     var attach = document.getElementById('main_container');
     var team = document.getElementById("team_name_field").value;
-    newDiv.innerHTML = '<div class="col-sm-8" id="team_div' + teamId + '"><h3 id="team_name">' + team + '</h3></div><div class="col-sm-2" id="start_div"><button onclick="addOne(' + "'team" + count + "_score'" + ')" type="button" class="btn btn-outline-light" id="teamButt">+1</button></div><div class="col-sm-2"><h3 id="team' + count + '_score">0</h3></div>';
+    newDiv.innerHTML = '<div class="col-sm-8" id="team_div' + teamId + '"><h3 id="team_name">' + team + '</h3></div><div class="col-sm-2"><h3 id="team' + count + '_score">0</h3></div>';
     count++;
     attach.appendChild(newDiv);
 
