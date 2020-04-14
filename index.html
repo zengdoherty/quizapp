@@ -24,83 +24,75 @@
       <script src="style.js"></script>
    </head>
    <body onload="setUp();">
-
       <div class="row">
          <div class="col-sm-12" id="header">
             <h1>The Isolation Night Drinking Game</h1>
          </div>
       </div>
-
       <div id="main">
-      <div class="container" id="main_container">
-         
-      <div class="row">
-         <div class="col-sm-3">
-            <h5>Add Teams</h5>
-         </div>
-         <div class="col-sm-9">
-            <h5 id="category_title"></h5>
-         </div>
-      </div>
-
-         <div class="row" id="top_row">
-            <div class="col-sm-3">
-               <form id="team_form">                
-                     <input class="form-control" id="team_name_field" placeholder="Team Name">                
-               </form>
-            </div>
-            <div class="col-sm-3">
-               <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Choose Category
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                     <a class="dropdown-item" id="cat_1" onclick="pickCategory(9)">General Knowledge</a>
-                     <a class="dropdown-item" id="cat_2" onclick="pickCategory(10)">Entertainment: Books</a>
-                     <a class="dropdown-item" id="cat_3" onclick="pickCategory(11)">Entertainment: Film</a>
-                     <a class="dropdown-item" id="cat_4" onclick="pickCategory(12)">Entertainment: Music</a>
-                     <a class="dropdown-item" id="cat_5" onclick="pickCategory(13)">Entertainment: Musical & Theatre</a>
-                     <a class="dropdown-item" id="cat_6" onclick="pickCategory(14)">Entertainment: Television</a>
-                     <a class="dropdown-item" id="cat_7" onclick="pickCategory(15)">Entertainment: Video Games</a>
-                     <a class="dropdown-item" id="cat_8" onclick="pickCategory(16)">Entertainment: Board Games</a>
-                     <a class="dropdown-item" id="cat_9" onclick="pickCategory(17)">Science & Nature</a>
-                     <a class="dropdown-item" id="cat_10" onclick="pickCategory(18)">Science: Computers</a>
-                     <a class="dropdown-item" id="cat_11" onclick="pickCategory(19)">Science: Mathematics</a>
-                     <a class="dropdown-item" id="cat_12" onclick="pickCategory(20)">Mythology</a>
-                     <a class="dropdown-item" id="cat_13" onclick="pickCategory(21)">Sports</a>
-                     <a class="dropdown-item" id="cat_14" onclick="pickCategory(22)">Geography</a>
-                     <a class="dropdown-item" id="cat_15" onclick="pickCategory(23)">History</a>
-                     <a class="dropdown-item" id="cat_16" onclick="pickCategory(24)">Politics</a>
-                     <a class="dropdown-item" id="cat_17" onclick="pickCategory(25)">Art</a>
-                  </div>
+         <div class="container" id="main_container">
+            <div class="row">
+               <div class="col-sm-3">
+                  <h5>Add Teams</h5>
+               </div>
+               <div class="col-sm-9">
+                  <h5 id="category_title"></h5>
                </div>
             </div>
-            <div class="col-sm-2">
-               <button onclick="startGame()"type="button" class="btn btn-outline-light" id="start_btn">Start</button>
+            <div class="row" id="top_row">
+               <div class="col-sm-3">
+                  <form id="team_form">                
+                     <input class="form-control" id="team_name_field" placeholder="Team Name">                
+                  </form>
+               </div>
+               <div class="col-sm-3">
+                  <div class="dropdown">
+                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Choose Category
+                     </button>
+                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" id="cat_1" onclick="pickCategory(9)">General Knowledge</a>
+                        <a class="dropdown-item" id="cat_2" onclick="pickCategory(10)">Entertainment: Books</a>
+                        <a class="dropdown-item" id="cat_3" onclick="pickCategory(11)">Entertainment: Film</a>
+                        <a class="dropdown-item" id="cat_4" onclick="pickCategory(12)">Entertainment: Music</a>
+                        <a class="dropdown-item" id="cat_5" onclick="pickCategory(13)">Entertainment: Musical & Theatre</a>
+                        <a class="dropdown-item" id="cat_6" onclick="pickCategory(14)">Entertainment: Television</a>
+                        <a class="dropdown-item" id="cat_7" onclick="pickCategory(15)">Entertainment: Video Games</a>
+                        <a class="dropdown-item" id="cat_8" onclick="pickCategory(16)">Entertainment: Board Games</a>
+                        <a class="dropdown-item" id="cat_9" onclick="pickCategory(17)">Science & Nature</a>
+                        <a class="dropdown-item" id="cat_10" onclick="pickCategory(18)">Science: Computers</a>
+                        <a class="dropdown-item" id="cat_11" onclick="pickCategory(19)">Science: Mathematics</a>
+                        <a class="dropdown-item" id="cat_12" onclick="pickCategory(20)">Mythology</a>
+                        <a class="dropdown-item" id="cat_13" onclick="pickCategory(21)">Sports</a>
+                        <a class="dropdown-item" id="cat_14" onclick="pickCategory(22)">Geography</a>
+                        <a class="dropdown-item" id="cat_15" onclick="pickCategory(23)">History</a>
+                        <a class="dropdown-item" id="cat_16" onclick="pickCategory(24)">Politics</a>
+                        <a class="dropdown-item" id="cat_17" onclick="pickCategory(25)">Art</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-2">
+                  <button onclick="startGame()"type="button" class="btn btn-outline-light" id="start_btn">Start</button>
+               </div>
+               <div class="col-sm-4">
+                  <div class="col-sm-2" id="start_div"></h5></div>
+               </div>
             </div>
-            <div class="col-sm-4">
-               <div class="col-sm-2" id="start_div"></h5></div>
-            </div>
-         </div>
             <div class="row">
                <div class="col-sm-2"><button class="btn btn-primary" id="add_btn" onclick="createTeamRow();return false">Add</button> </div>
             </div>
-      </div>
-
-
-
-            <div class="container" id="question_container">
-<!--             <div class="row">
+         </div>
+         <div class="container" id="question_container">
+            <!--             <div class="row">
                <div class="col-sm-12">
                   <h3>Team Name</h3>
                </div>
-            </div> -->
+               </div> -->
             <div class="row">
                <div class="col-sm-12" id="question_div">
                   <h3 id="question"></h3>
                </div>
             </div>
-
             <div class="row" id="answer_row">
                <div class="col-sm-1" id="ans_btn"><button onclick="checkAnswer('A')" type="button" class="btn btn-outline-light" id="butt1">A</button></div>
                <div class="col-sm-5" id="answer_text">
@@ -111,7 +103,6 @@
                   <h4 id="ans2"></h4>
                </div>
             </div>
-
             <div class="row" id="answer_row">
                <div class="col-sm-1" id="ans_btn"><button onclick="checkAnswer('C')" type="button" class="btn btn-outline-light" id="butt3">C</button></div>
                <div class="col-sm-5" id="answer_text">
@@ -122,125 +113,6 @@
                   <h4 id="ans4"></h4>
                </div>
             </div>
-             <div class="row" id="true_false_buttons">
-               <div class="col-sm-6">
-                  <h1 id="ans1"><button onclick="trueOrFalse('True')" type="button" class="btn btn-outline-light" id="butt">True</button></h1>
-               </div>
-               <div class="col-sm-6">
-                  <h1 id="ans2"><button onclick="trueOrFalse('False')" type="button" class="btn btn-outline-light" id="butt">False</button></h1>
-               </div>
-            </div>
-            </div>
-
-
-
-
-   </div> <!-- end of main -->
-
-
-   <br><br><br><br><br><br><br><br><br><br><br>
-
-
-
-
-
-
-
-
-
-      <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
-
-
-  <!--     Drop Down for categories -->
-      <div class="row" id="header_row">
-         <div class="col-sm-2" id="start_div">
-            <div class="dropdown">
-               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               Choose Category
-               </button>
-               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" id="cat_1" onclick="pickCategory(9)">General Knowledge</a>
-                  <a class="dropdown-item" id="cat_2" onclick="pickCategory(10)">Entertainment: Books</a>
-                  <a class="dropdown-item" id="cat_3" onclick="pickCategory(11)">Entertainment: Film</a>
-                  <a class="dropdown-item" id="cat_4" onclick="pickCategory(12)">Entertainment: Music</a>
-                  <a class="dropdown-item" id="cat_5" onclick="pickCategory(13)">Entertainment: Musical & Theatre</a>
-                  <a class="dropdown-item" id="cat_6" onclick="pickCategory(14)">Entertainment: Television</a>
-                  <a class="dropdown-item" id="cat_7" onclick="pickCategory(15)">Entertainment: Video Games</a>
-                  <a class="dropdown-item" id="cat_8" onclick="pickCategory(16)">Entertainment: Board Games</a>
-                  <a class="dropdown-item" id="cat_9" onclick="pickCategory(17)">Science & Nature</a>
-                  <a class="dropdown-item" id="cat_10" onclick="pickCategory(18)">Science: Computers</a>
-                  <a class="dropdown-item" id="cat_11" onclick="pickCategory(19)">Science: Mathematics</a>
-                  <a class="dropdown-item" id="cat_12" onclick="pickCategory(20)">Mythology</a>
-                  <a class="dropdown-item" id="cat_13" onclick="pickCategory(21)">Sports</a>
-                  <a class="dropdown-item" id="cat_14" onclick="pickCategory(22)">Geography</a>
-                  <a class="dropdown-item" id="cat_15" onclick="pickCategory(23)">History</a>
-                  <a class="dropdown-item" id="cat_16" onclick="pickCategory(24)">Politics</a>
-                  <a class="dropdown-item" id="cat_17" onclick="pickCategory(25)">Art</a>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-10" id="categories">
-           <!--  <h5>Category:</h5> -->
-            <h5 id="category_title"></h5>
-         </div>
-      </div>
-
-      <div id="main">
-         <div class="container" id="main_container">
-            <!-- Form to create Teams-->
-            <div class="row" id="top_bar">
-               <div class="col-sm-4">
-                  <form id="team_form">
-                     <div class="form-group">
-                        <label>Enter Team Name</label>
-                        <input class="form-control" id="team_name_field" placeholder="Team Name">
-                     </div>
-                     <button class="btn btn-primary" onclick="createTeamRow();return false">Submit</button>  
-                  </form>
-               </div>
-               <div class="col-sm-7" id="start_div">
-                  <div class="col-12" id="game_title">
-                     <h1 id="title">Friday Night Sippy Poos <br>Big Fat Quiz !!!</h1>
-                  </div>
-               </div>
-               <div class="col-sm-1" id="start_div"><button onclick="startGame()"type="button" class="btn btn-outline-light" id="start_btn">Start</button></div>
-            </div>
-         </div>
-
-         <!-- /container -->
-         <div class="container" id="question_container">
-            <div class="row">
-               <div class="col-sm-12" id="question_div">
-                  <h3 id="question"></h3>
-               </div>
-            </div>
-
-
-            <div class="row">
-               <div class="col-sm-2" id="ans_btn"><button onclick="checkAnswer('A')" type="button" class="btn btn-outline-light" id="butt1">A</button></div>
-               <div class="col-sm-10" id="answer_text">
-                  <h4 id="ans1"></h4>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-sm-2" id="ans_btn"><button onclick="checkAnswer('B')" type="button" class="btn btn-outline-light" id="butt2">B</button></div>
-               <div class="col-sm-10" id="answer_text">
-                  <h4 id="ans2"></h4>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-sm-2" id="ans_btn"><button onclick="checkAnswer('C')" type="button" class="btn btn-outline-light" id="butt3">C</button></div>
-               <div class="col-sm-10" id="answer_text">
-                  <h4 id="ans3"></h4>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-sm-2" id="ans_btn"><button onclick="checkAnswer('D')" type="button" class="btn btn-outline-light" id="butt4">D</button></div>
-               <div class="col-sm-10" id="answer_text">
-                  <h4 id="ans4"></h4>
-               </div>
-            </div>
-
             <div class="row" id="true_false_buttons">
                <div class="col-sm-6">
                   <h1 id="ans1"><button onclick="trueOrFalse('True')" type="button" class="btn btn-outline-light" id="butt">True</button></h1>
@@ -250,10 +122,9 @@
                </div>
             </div>
          </div>
-         <!-- /question_container -->
       </div>
-      <!-- Optional JavaScript -->
-      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <!-- end of main -->
+      <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
