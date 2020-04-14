@@ -1,60 +1,77 @@
-
-
 body {
   background-color: #33334d;
-font-family: 'Concert One', cursive;
+  font-family: 'Source Code Pro', monospace;
+  font-family: 'Righteous', cursive;
 }
-.form-control{
-	background: #33334d;
-	border:2px solid white;
+
+.form-control {
+  background: #33334d;
 }
-#team_name{
-  color: red;
-  text-shadow: 1px 1px white;
+
+#team_name {
+  color: white;
+  text-align: center;
+}
+
+#team_div {
+  text-align: left;
+  border-radius: 10px;
+  border: 1px solid green;
+}
+#team_div2{
+    /*border-radius: 10px;*/
+  /*border: 3px solid green;*/
 }
 
 #question_div {
   vertical-align: middle;
   display: table-cell;
-  border-bottom: 1px solid white;
-}
-#start_div{
- 
 }
 
-#new_div{
-	
-}
-
-#dropdownMenuButton{
-	margin-top: : 20px;
-	background: #33334d;
-	color: white;
-	border: 2px solid white;
+#newDiv {
+  margin: 2px;
 
 }
+
+#dropdownMenuButton {
+  margin-top: : 20px;
+  background: #33334d;
+  color: white;
+  border: 1px solid white;
+}
+
 #answer_text {
   font-style: italic;
   text-align: left;
   vertical-align: middle;
   display: table-cell;
   padding: 12px;
-  border-bottom: 1px solid white;
-  
 }
-.dropdown-menu{
-	background: #33334d;
-	color: white;
-	border: 2px solid white;
+
+
+
+.dropdown-menu {
+  background: #33334d;
+  color: white;
+  border: 1px solid white;
 }
-#categories{
+
+#answer_row{
+  min-height: 100px;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#categories {
+  float: right;
   display: flex;
   justify-content: center;
   align-items: center;
-   
 }
-#team_form{
-	color: white;
+
+#team_form {
+  color: white;
 }
 
 #ans {
@@ -65,32 +82,48 @@ font-family: 'Concert One', cursive;
 h1 {
   text-align: center;
   color: white;
-  text-shadow: 2px 2px red;
-
-
+  padding: 20px;
 }
 
-#game_title{
+#game_title {
   border-radius: 20px;
   background: #33334d;
   vertical-align: middle;
   color: white;
   text-align: center;
-  
-}
-#start_btn{
-	color: white;
-	border: 2px solid white;
 }
 
-#ans_btn{
-  border-bottom: 1px solid white;
+#start_btn {
+  color: white;
 }
 
-#title{
+#ans_btn {
+  height: 100%;
+  width: 100%;
+}
+
+#title {
   font-style: oblique;
   color: white;
+}
 
+#add_btn {
+  margin: 5px;
+  background: #668cff;
+}
+
+#top_row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+#center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
 }
 
 h4 {
@@ -101,33 +134,31 @@ h3 {
   vertical-align: middle;
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
 }
 
 h4 {
   vertical-align: middle;
 }
-h5{
 
-	color: white;
-	display: inline;
-	padding-top: 10px;
+h5 {
+  color: white;
+  white-space: nowrap
+}
+
+#header {
+  background: #668cff;
 }
 
 #top_bar {
   color: white;
-  border-bottom: 4px solid white;
-  padding-bottom: 5px;
-  border-top: 4px solid white;
-
 }
 
-#start_div{
+#start_div {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 
 #question {
   vertical-align: baseline;
@@ -139,32 +170,37 @@ h5{
   padding: 20px;
 }
 
-
-
-#start_button{
-
+#main {
+  width: 100%
 }
 
+#start_button {}
+
 #butt1 {
+  display: block;
   margin: 10px;
-  border-bottom: 1px solid white;
+  width: 100%;
 }
 
 #butt2 {
+  display: block;
   margin: 10px;
+  width: 100%;
 }
 
 #butt3 {
+  display: block;
   margin: 10px;
+  width: 100%;
 }
 
 #butt4 {
+  display: block;
   margin: 10px;
+  width: 100%;
 }
 
 #teamButt {
-  
   align-items: center;
-  border: 2px solid white;
   color: white;
 }

@@ -1,18 +1,22 @@
      
   var count = 1;
+  var teamId = 0;
 
-  function createTeamRow(){     
+  function createTeamRow(){  
+  teamId = teamId + 1;   
     var newDiv = document.createElement('div');
     newDiv.id = 'newDiv';
     newDiv.classList.add('row');
     var attach = document.getElementById('main_container');
     var team = document.getElementById("team_name_field").value;
-    newDiv.innerHTML = '<div class="col-sm-4"><h3 id="team_name">'+team+'</h3></div><div class="col-sm-4"><h3 id="team'+count+'_score">0</h3></div><div class="col-sm-4" id="start_div"><button onclick="addOne('+"'team"+count+"_score'"+')" type="button" class="btn btn-outline-light" id="teamButt">+1</button></div>';
+    newDiv.innerHTML = '<div class="col-sm-8" id="team_div'+teamId+'"><h3 id="team_name">'+team+'</h3></div><div class="col-sm-2" id="start_div"><button onclick="addOne('+"'team"+count+"_score'"+')" type="button" class="btn btn-outline-light" id="teamButt">+1</button></div><div class="col-sm-2"><h3 id="team'+count+'_score">0</h3></div>';
     count++;
     attach.appendChild(newDiv);
 
     var team = document.getElementById("team_name_field").value;
     document.getElementById("team_form").reset();
+
+    
 
   }    
 
@@ -178,7 +182,10 @@ function checkAnswer(ans) {
         }
     }
     question_count++;
+
+    
     setTimeout(nextQuestion, 3000)
+    whos_turn(teamId)
 
 }
 
@@ -195,8 +202,27 @@ function checkAnswer(ans) {
   }
 
   function startGame(){
+      document.getElementById("team_div1").style.border = "3px solid green";
+      document.getElementById("team_div1").style.borderRadius = "10px";
+
     document.getElementById('question_container').style.visibility = 'visible';
     getData();
+    
+  }
+var team_count = 1;
+  function whos_turn(teamId){  
+      document.getElementById("team_div"+team_count).style.border = "3px solid #33334d";
+      document.getElementById("team_div"+team_count).style.borderRadius = "10px";
+
+      if(team_count == teamId){
+
+        team_count = 1;
+      }else{
+        team_count = team_count + 1;
+      }
+      document.getElementById("team_div"+team_count).style.border = "3px solid green";
+      document.getElementById("team_div"+team_count).style.borderRadius = "10px";
+    
   }
 
   var url = "https://opentdb.com/api.php?amount=50";
