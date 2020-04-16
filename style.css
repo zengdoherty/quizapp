@@ -18,25 +18,18 @@ body {
   border-radius: 10px;
   border: 1px solid green;
 }
-#team_div2{
-    /*border-radius: 10px;*/
-  /*border: 3px solid green;*/
-}
 
-.true_false{
-  /*visibility: hidden;*/
+.true_false {
   border-bottom: 1px solid #668cff;
 }
 
 #question_div {
   vertical-align: middle;
-  
   border-bottom: 1px solid #668cff;
 }
 
 #newDiv {
   margin: 2px;
-
 }
 
 #dropdownMenuButton {
@@ -45,11 +38,10 @@ body {
   color: white;
   border: 1px solid white;
 }
-#dropdownMenuButton:hover{
+
+#dropdownMenuButton:hover {
   background-color: #668cff;
 }
-
-
 
 #answer_text {
   font-style: italic;
@@ -59,13 +51,13 @@ body {
   padding: 12px;
 }
 
-a:hover{
-  background-color: #668cff;
-}
-.dropdown-item:hover{
+a:hover {
   background-color: #668cff;
 }
 
+.dropdown-item:hover {
+  background-color: #668cff;
+}
 
 .dropdown-menu {
   background: #33334d;
@@ -73,12 +65,11 @@ a:hover{
   border: 1px solid white;
 }
 
-#answer_row{
+#answer_row {
   min-height: 100px;
-    display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 #categories {
@@ -114,14 +105,10 @@ h1 {
 #start_btn {
   color: white;
 }
+
 #start_btn:hover {
   background-color: #668cff;
 }
-
-/*#ans_btn {
-  height: 100%;
-  width: 100%;
-}*/
 
 #title {
   font-style: oblique;
@@ -174,15 +161,20 @@ h5 {
   background: #668cff;
   position: relative;
   animation-name: example;
-  animation-duration: 2s;  
+  animation-duration: 2s;
   animation-delay: 3s;
   animation-fill-mode: backwards;
 }
-@keyframes example {
-  from {top: 200px; background-color: #33334d;}
-  to {top: 10px;}
-}
 
+@keyframes example {
+  from {
+    top: 200px;
+    background-color: #33334d;
+  }
+  to {
+    top: 10px;
+  }
+}
 
 #top_bar {
   color: white;
@@ -204,8 +196,6 @@ h5 {
   padding: 20px;
 }
 
-
-
 #main {
   width: 100%
 }
@@ -217,7 +207,6 @@ h5 {
   margin: 10px;
   width: 100%;
 }
-
 
 #butt2 {
   display: block;
