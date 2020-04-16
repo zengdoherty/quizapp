@@ -12,22 +12,26 @@ function createTeamRow() {
     count++;
     attach.appendChild(newDiv);
 
+    
+
     var team = document.getElementById("team_name_field").value;
     document.getElementById("team_form").reset();
-
-
 
 }
 
 function setUp() {
     document.getElementById('question_container').style.visibility = 'hidden';
-    document.getElementById('true_false_buttons').style.visibility = 'hidden';
+    // document.getElementById('true_false_buttons').style.visibility = 'hidden';
+    document.getElementById('true').style.visibility = 'hidden';
+    document.getElementById('false').style.visibility = 'hidden';
+   
 }
 
 
 function addOne(team) {
     var num = parseInt(document.getElementById(team).innerHTML);
     num = num + 1;
+    // if(num === 3){alert("Winner")}
     document.getElementById(team).innerHTML = num;
 }
 
@@ -83,7 +87,9 @@ function nextQuestion() {
     if (jsondata.results[question_count].type == "multiple") {
 
         document.getElementById('question_container').style.visibility = 'visible';
-        document.getElementById('true_false_buttons').style.visibility = 'hidden';
+        // document.getElementById('true_false_buttons').style.visibility = 'hidden';
+        document.getElementById('true').style.visibility = 'hidden';
+        document.getElementById('false').style.visibility = 'hidden';
 
         document.getElementById('butt1').style.visibility = 'visible';
         document.getElementById('butt2').style.visibility = 'visible';
@@ -109,7 +115,9 @@ function nextQuestion() {
 
     } else if (jsondata.results[question_count].type == "boolean") {
 
-        document.getElementById('true_false_buttons').style.visibility = 'visible';
+       // document.getElementById('true_false_buttons').style.visibility = 'visible';
+        document.getElementById('true').style.visibility = 'visible';
+        document.getElementById('false').style.visibility = 'visible';
         document.getElementById('butt1').style.visibility = 'hidden';
         document.getElementById('butt2').style.visibility = 'hidden';
         document.getElementById('butt3').style.visibility = 'hidden';
@@ -133,56 +141,64 @@ function checkAnswer(ans) {
     if (ans == 'A') {
         let = btnA = document.querySelector('#butt1');
         guess = document.getElementById("ans1").innerText;
-        if (guess === correct) {
+        if (guess.includes(correct.trim()))  {
             addOne('team' + team_count + '_score')
             btnA.style.backgroundColor = '#7CFC00';
-            alertify.success('Correct !!!');
+            //alertify.success('Correct !!!');
+            notie.alert({ type: 'success', text: 'Correct!', time: 2, position: 'bottom' })
         } else {
             btnA.style.backgroundColor = '#FF0000';
             alertify.message("Answer: " + correct);
-            alertify.error('Wrong!!!');
+           // alertify.error('Wrong!!!');
+            notie.alert({ type: 3, text: 'Wrong.', position: 'bottom' })
 
         }
     }
     if (ans == 'B') {
         let = btnB = document.querySelector('#butt2');
         guess = document.getElementById("ans2").innerText;
-        if (guess === correct) {
+        if (guess.includes(correct.trim())) {
             addOne('team' + team_count + '_score')
             btnB.style.backgroundColor = '#7CFC00';
-            alertify.success('Correct !!!');
+           // alertify.success('Correct !!!');
+            notie.alert({ type: 'success', text: 'Correct!', time: 2, position: 'bottom' })
         } else {
             btnB.style.backgroundColor = '#FF0000';
             alertify.message("Answer: " + correct);
-            alertify.error('Wrong!!!');
+           // alertify.error('Wrong!!!');
+            notie.alert({ type: 3, text: 'Wrong.', position: 'bottom' })
 
         }
     }
     if (ans == 'C') {
         let = btnC = document.querySelector('#butt3');
         guess = document.getElementById("ans3").innerText;
-        if (guess === correct) {
+        if (guess.includes(correct.trim()))  {
             addOne('team' + team_count + '_score')
             btnC.style.backgroundColor = '#7CFC00';
-            alertify.success('Correct !!!');
+            // alertify.success('Correct !!!');
+            notie.alert({ type: 'success', text: 'Correct!', time: 2, position: 'bottom' })
         } else {
             btnC.style.backgroundColor = '#FF0000';
             alertify.message("Answer: " + correct);
-            alertify.error('Wrong!!!');
+           // alertify.error('Wrong!!!');
+            notie.alert({ type: 3, text: 'Wrong!', position: 'bottom' })
 
         }
     }
     if (ans == 'D') {
         let = btnD = document.querySelector('#butt4');
         guess = document.getElementById("ans4").innerText;
-        if (guess === correct) {
+        if (guess.includes(correct.trim())) {
             addOne('team' + team_count + '_score')
             btnD.style.backgroundColor = '#7CFC00';
-            alertify.success('Correct !!!');
+            // alertify.success('Correct !!!');
+            notie.alert({ type: 'success', text: 'Correct!', time: 2, position: 'bottom' })
         } else {
             btnD.style.backgroundColor = '#FF0000';
             alertify.message("Answer: " + correct);
-            alertify.error('Wrong!!!');
+            //alertify.error('Wrong!!!');
+            notie.alert({ type: 3, text: 'Wrong.', position: 'bottom' })
 
         }
     }
@@ -198,10 +214,12 @@ function trueOrFalse(guess) {
     if (guess === jsondata.results[question_count].correct_answer) {
         // alert("That is TRUE !!!! "+guess+" == " +jsondata.results[question_count].correct_answer)
         addOne('team' + team_count + '_score')
-        alertify.success('True, Well Done !!!');
+        // alertify.success('True, Well Done !!!');
+        notie.alert({ type: 'success', text: 'Correct!', time: 2, position: 'bottom' })
     } else {
         // alert("Wrong !!!! "+guess+" == " +jsondata.results[question_count].correct_answer)
-        alertify.error('False, You Idiot !!!');
+        //alertify.error('False, You Idiot !!!');
+         notie.alert({ type: 3, text: 'Wrong.', position: 'bottom' })
     }
     question_count++;
     setTimeout(nextQuestion, 3000)
@@ -223,7 +241,6 @@ function whos_turn(teamId) {
     document.getElementById("team_div" + team_count).style.borderRadius = "10px";
 
     if (team_count == teamId) {
-
         team_count = 1;
     } else {
         team_count = team_count + 1;
@@ -277,3 +294,11 @@ function pickCategory(cat) {
     document.getElementById('category_title').innerHTML = x;
 
 }
+
+
+
+function openWinnerTab()
+{
+    window.location = 'winner.html';
+}
+

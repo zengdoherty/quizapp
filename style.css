@@ -23,9 +23,15 @@ body {
   /*border: 3px solid green;*/
 }
 
+.true_false{
+  /*visibility: hidden;*/
+  border-bottom: 1px solid #668cff;
+}
+
 #question_div {
   vertical-align: middle;
-  display: table-cell;
+  
+  border-bottom: 1px solid #668cff;
 }
 
 #newDiv {
@@ -39,6 +45,11 @@ body {
   color: white;
   border: 1px solid white;
 }
+#dropdownMenuButton:hover{
+  background-color: #668cff;
+}
+
+
 
 #answer_text {
   font-style: italic;
@@ -48,6 +59,12 @@ body {
   padding: 12px;
 }
 
+a:hover{
+  background-color: #668cff;
+}
+.dropdown-item:hover{
+  background-color: #668cff;
+}
 
 
 .dropdown-menu {
@@ -61,6 +78,7 @@ body {
     display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 #categories {
@@ -96,11 +114,14 @@ h1 {
 #start_btn {
   color: white;
 }
+#start_btn:hover {
+  background-color: #668cff;
+}
 
-#ans_btn {
+/*#ans_btn {
   height: 100%;
   width: 100%;
-}
+}*/
 
 #title {
   font-style: oblique;
@@ -183,10 +204,7 @@ h5 {
   padding: 20px;
 }
 
-#butt{
-  height: 100px;
-  width: 100px;
-}
+
 
 #main {
   width: 100%
@@ -199,6 +217,7 @@ h5 {
   margin: 10px;
   width: 100%;
 }
+
 
 #butt2 {
   display: block;
