@@ -156,6 +156,7 @@
       </div>
       <div id="main">
          <div class="container" id="main_container">
+
             <div class="row">
                <div class="col-sm-3">
                   <h5>Add Teams</h5>
@@ -164,13 +165,19 @@
                   <h5 id="category_title"></h5>
                </div>
             </div>
+
             <div class="row" id="top_row">
+               <div class="col-sm-1">
+                  <button class="btn btn-primary" id="add_btn" onclick="createTeamRow();return false">Add</button> 
+               </div>
+
                <div class="col-sm-3">
                   <form id="team_form">                
                      <input class="form-control" id="team_name_field" placeholder="Team Name">                
                   </form>
                </div>
-               <div class="col-sm-3">
+
+               <div class="col-sm-3" id="start_div">
                   <div class="dropdown">
                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      Choose Category
@@ -196,17 +203,29 @@
                      </div>
                   </div>
                </div>
+
+
+                  <div class="col-sm-3" id="start_div">
+                      <button class="btn btn-secondary dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton">
+                           Race to...
+                     </button>
+                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" id="cat_1" onclick="pickCategory(9)">5</a>
+                        <a class="dropdown-item" id="cat_2" onclick="pickCategory(10)">10</a>
+                        <a class="dropdown-item" id="cat_3" onclick="pickCategory(11)">15</a>
+                     </div>
+                  </div>
+
                <div class="col-sm-2">
                   <button onclick="startGame()"type="button" class="btn btn-outline-light" id="start_btn">Start</button>
                </div>
-               <div class="col-sm-4">
-                  <div class="col-sm-2" id="start_div"></h5></div>
-               </div>
+                     
+
+               
+               </div> <!-- end of row
+ -->
             </div>
             
-            <div class="row">
-               <div class="col-sm-2"><button class="btn btn-primary" id="add_btn" onclick="createTeamRow();return false">Add</button> </div>
-            </div>
          </div>
          <div class="container" id="question_container">
 

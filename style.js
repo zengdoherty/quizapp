@@ -1,7 +1,7 @@
 var count = 1;
 var teamId = 0;
 
-var winnerId = 1;
+
 
 function createTeamRow() {
     teamId = teamId + 1;
@@ -33,7 +33,7 @@ function setUp() {
 function addOne(team) {
     var num = parseInt(document.getElementById(team).innerHTML);
     num = num + 1;
-    if(num === 1){
+    if(num === 5){
         winnerModal()
     }
     document.getElementById(team).innerHTML = num;
@@ -48,14 +48,6 @@ function winnerModal(){
     
     document.getElementById('congratulations').innerHTML = "Congratulations, "+winner;
 }
-// span.onclick = function() {
-//     modal.style.display = "none";
-// }
-// window.onclick = function(event) {
-//      if (event.target == modal) {
-//             modal.style.display = "none";
-//      }
-// }
 
 
 let jsondata;
@@ -227,7 +219,6 @@ function checkAnswer(ans) {
     }
     question_count++;
 
-    winnerId = team_count;
     setTimeout(nextQuestion, 3000)
     whos_turn(teamId)
 
