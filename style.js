@@ -1,6 +1,8 @@
 var count = 1;
 var teamId = 0;
 
+var winnerId = 1;
+
 function createTeamRow() {
     teamId = teamId + 1;
     var newDiv = document.createElement('div');
@@ -8,7 +10,7 @@ function createTeamRow() {
     newDiv.classList.add('row');
     var attach = document.getElementById('main_container');
     var team = document.getElementById("team_name_field").value;
-    newDiv.innerHTML = '<div class="col-sm-8" id="team_div' + teamId + '"><h3 id="team_name">' + team + '</h3></div><div class="col-sm-2"><h3 id="team' + count + '_score">0</h3></div>';
+    newDiv.innerHTML = '<div class="col-sm-8" id="team_div' + teamId + '"><h3 id="team_name'+teamId+'">' + team + '</h3></div><div class="col-sm-2"><h3 id="team' + count + '_score">0</h3></div>';
     count++;
     attach.appendChild(newDiv);
 
@@ -31,9 +33,30 @@ function setUp() {
 function addOne(team) {
     var num = parseInt(document.getElementById(team).innerHTML);
     num = num + 1;
-    // if(num === 3){alert("Winner")}
+    if(num === 1){
+        winnerModal()
+    }
     document.getElementById(team).innerHTML = num;
 }
+               var modal = document.getElementById("myModal");
+               var span = document.getElementsByClassName("close")[0];
+
+function winnerModal(){
+
+    modal.style.display = "block";
+    var winner  = document.getElementById('team_name'+team_count).textContent;
+    
+    document.getElementById('congratulations').innerHTML = "Congratulations, "+winner;
+}
+// span.onclick = function() {
+//     modal.style.display = "none";
+// }
+// window.onclick = function(event) {
+//      if (event.target == modal) {
+//             modal.style.display = "none";
+//      }
+// }
+
 
 let jsondata;
 
@@ -204,7 +227,7 @@ function checkAnswer(ans) {
     }
     question_count++;
 
-
+    winnerId = team_count;
     setTimeout(nextQuestion, 3000)
     whos_turn(teamId)
 
@@ -229,6 +252,9 @@ function trueOrFalse(guess) {
 function startGame() {
     document.getElementById("team_div1").style.border = "3px solid green";
     document.getElementById("team_div1").style.borderRadius = "10px";
+     document.getElementById("dropdownMenuButton").disabled=true;  
+     document.getElementById("start_btn").disabled=true;
+     document.getElementById("add_btn").disabled=true;
 
     document.getElementById('question_container').style.visibility = 'visible';
     getData();
