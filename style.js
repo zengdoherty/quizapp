@@ -1,6 +1,8 @@
 var count = 1;
 var teamId = 0;
 
+var goal = 5;
+
 
 
 function createTeamRow() {
@@ -29,11 +31,18 @@ function setUp() {
    
 }
 
+function setRaceGoal(num){
+    // document.getElementById('race').innerHTML = "goal";
+    goal = num;
+    document.getElementById('race_target').innerHTML = "Race to "+goal;
+
+}
+
 
 function addOne(team) {
     var num = parseInt(document.getElementById(team).innerHTML);
     num = num + 1;
-    if(num === 5){
+    if(num === goal){
         winnerModal()
     }
     document.getElementById(team).innerHTML = num;
@@ -152,10 +161,10 @@ function nextQuestion() {
 function checkAnswer(ans) {
 
     var guess;
-    var correct = jsondata.results[question_count].correct_answer;
+    var correct = decodeHtml(jsondata.results[question_count].correct_answer);
     if (ans == 'A') {
         let = btnA = document.querySelector('#butt1');
-        guess = document.getElementById("ans1").innerText;
+        guess = decodeHtml(document.getElementById("ans1").innerText);
         if (guess.includes(correct.trim()))  {
             addOne('team' + team_count + '_score')
             btnA.style.backgroundColor = '#7CFC00';
@@ -171,7 +180,7 @@ function checkAnswer(ans) {
     }
     if (ans == 'B') {
         let = btnB = document.querySelector('#butt2');
-        guess = document.getElementById("ans2").innerText;
+        guess = decodeHtml(document.getElementById("ans2").innerText);
         if (guess.includes(correct.trim())) {
             addOne('team' + team_count + '_score')
             btnB.style.backgroundColor = '#7CFC00';
@@ -187,7 +196,7 @@ function checkAnswer(ans) {
     }
     if (ans == 'C') {
         let = btnC = document.querySelector('#butt3');
-        guess = document.getElementById("ans3").innerText;
+        guess = decodeHtml(document.getElementById("ans3").innerText);
         if (guess.includes(correct.trim()))  {
             addOne('team' + team_count + '_score')
             btnC.style.backgroundColor = '#7CFC00';
@@ -203,7 +212,7 @@ function checkAnswer(ans) {
     }
     if (ans == 'D') {
         let = btnD = document.querySelector('#butt4');
-        guess = document.getElementById("ans4").innerText;
+        guess = decodeHtml(document.getElementById("ans4").innerText);
         if (guess.includes(correct.trim())) {
             addOne('team' + team_count + '_score')
             btnD.style.backgroundColor = '#7CFC00';
@@ -222,6 +231,32 @@ function checkAnswer(ans) {
     setTimeout(nextQuestion, 3000)
     whos_turn(teamId)
 
+}
+
+function escapeHtml(str){
+    var map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+    };
+    return str.replace(/[&<>"']/g, function(m) {return map[m];});
+}
+
+function decodeHtml(str)
+{
+    var map =
+    {
+        '&amp;': '&',
+        '&euml;':'ë',
+        '&ouml': 'ö',
+        '&lt;': '<',
+        '&gt;': '>',
+        '&quot;': '"',
+        '&#039;': "'"
+    };
+    return str.replace(/&amp;|&lt;|&gt;|&quot;|&#039;/g, function(m) {return map[m];});
 }
 
 function trueOrFalse(guess) {
