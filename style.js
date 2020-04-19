@@ -283,20 +283,26 @@ function escapeHtml(str) {
     });
 }
 
-function decodeHtml(str) {
-    var map = {
-        '&amp;': '&',
-        '&euml;': 'ë',
-        '&ouml': 'ö',
-        '&lt;': '<',
-        '&gt;': '>',
-        '&quot;': '"',
-        '&#039;': "'"
-    };
-    return str.replace(/&amp;|&lt;|&gt;|&quot;|&#039;/g, function(m) {
-        return map[m];
-    });
-}
+// function decodeHtml(str) {
+//     var map = {
+//         '&amp;': '&',
+//         '&euml;': 'ë',
+//         '&ouml': 'ö',
+//         '&lt;': '<',
+//         '&gt;': '>',
+//         '&quot;': '"',
+//         '&#039;': "'"
+//     };
+//     return str.replace(/&amp;|&lt;|&gt;|&quot;|&#039;/g, function(m) {
+//         return map[m];
+//     });
+// }
+
+function decodeHtml(html) {
+    var txt = document.createElement('textarea');
+    txt.innerHTML = html;
+    return txt.value;
+};
 
 function trueOrFalse(guess) {
     if (guess === jsondata.results[question_count].correct_answer) {
