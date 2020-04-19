@@ -56,7 +56,7 @@ function winnerModal() {
     modal.style.display = "block";
     var winner = document.getElementById('team_name' + team_count).textContent;
 
-    document.getElementById('congratulations').innerHTML = "Congratulations, " + winner;
+    document.getElementById('congratulations').innerHTML = "Congratulations, " + winner+". You are the winner !!!";
 }
 
 
@@ -283,20 +283,6 @@ function escapeHtml(str) {
     });
 }
 
-// function decodeHtml(str) {
-//     var map = {
-//         '&amp;': '&',
-//         '&euml;': 'ë',
-//         '&ouml': 'ö',
-//         '&lt;': '<',
-//         '&gt;': '>',
-//         '&quot;': '"',
-//         '&#039;': "'"
-//     };
-//     return str.replace(/&amp;|&lt;|&gt;|&quot;|&#039;/g, function(m) {
-//         return map[m];
-//     });
-// }
 
 function decodeHtml(html) {
     var txt = document.createElement('textarea');
