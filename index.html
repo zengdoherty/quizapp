@@ -3,17 +3,10 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
-    <style>
-        /* override styles here */
-        
-        .notie-container {
-            box-shadow: none;
-        }
-    </style>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Source+Code+Pro&display=swap" rel="stylesheet">
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet"> -->
+
     <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
@@ -41,11 +34,8 @@
 </head>
 
 <body onload="setUp();">
-    <!-- <button id="myBtn">Open Modal</button> -->
-
     <!-- The Modal -->
     <div id="myModal" class="modal">
-
         <!-- Modal content -->
         <div class="modal-content">
             <div class="modal-header">
@@ -53,13 +43,11 @@
                 <span class="close">&times;</span>
             </div>
             <div class="modal-body">
-
             </div>
             <div class="modal-footer">
                 <h3>Refresh the page to start again........</h3>
             </div>
         </div>
-
     </div>
     <script>
         var modal = document.getElementById("myModal");
@@ -68,10 +56,12 @@
 
         span.onclick = function() {
             modal.style.display = "none";
+            location.reload();
         }
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
+                location.reload();
             }
         }
     </script>
@@ -79,7 +69,6 @@
     <div class="row">
         <div class="col-sm-12" id="header">
             <h1>The Isolation Night Drinking Game</h1>
-            <!-- <button onclick="window.location.href = 'winner.html';" type="button" class="btn btn-outline-light">Winner</button> -->
         </div>
     </div>
     <div id="main">
@@ -137,7 +126,7 @@
                 </div>
 
                 <div class="col-sm-3" id="start_div">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="raceBtn">
                         Race to...
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

@@ -1,7 +1,8 @@
+
+
 var count = 1;
 var teamId = 0;
-
-var goal = 5;
+var goal = 5;  //default goal
 
 
 
@@ -12,11 +13,11 @@ function createTeamRow() {
     newDiv.classList.add('row');
     var attach = document.getElementById('main_container');
     var team = document.getElementById("team_name_field").value;
-    newDiv.innerHTML = '<div class="col-sm-8" id="team_div' + teamId + '"><h3 id="team_name'+teamId+'">' + team + '</h3></div><div class="col-sm-2"><h3 id="team' + count + '_score">0</h3></div>';
+    newDiv.innerHTML = '<div class="col-sm-8" id="team_div' + teamId + '"><h3 id="team_name' + teamId + '">' + team + '</h3></div><div class="col-sm-2"><h3 id="team' + count + '_score">0</h3></div>';
     count++;
     attach.appendChild(newDiv);
 
-    
+
 
     var team = document.getElementById("team_name_field").value;
     document.getElementById("team_form").reset();
@@ -28,13 +29,13 @@ function setUp() {
     // document.getElementById('true_false_buttons').style.visibility = 'hidden';
     document.getElementById('true').style.visibility = 'hidden';
     document.getElementById('false').style.visibility = 'hidden';
-   
+
 }
 
-function setRaceGoal(num){
+function setRaceGoal(num) {
     // document.getElementById('race').innerHTML = "goal";
     goal = num;
-    document.getElementById('race_target').innerHTML = "Race to "+goal;
+    document.getElementById('race_target').innerHTML = "Race to " + goal;
 
 }
 
@@ -42,20 +43,20 @@ function setRaceGoal(num){
 function addOne(team) {
     var num = parseInt(document.getElementById(team).innerHTML);
     num = num + 1;
-    if(num === goal){
+    if (num === goal) {
         winnerModal()
     }
     document.getElementById(team).innerHTML = num;
 }
-               var modal = document.getElementById("myModal");
-               var span = document.getElementsByClassName("close")[0];
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
 
-function winnerModal(){
+function winnerModal() {
 
     modal.style.display = "block";
-    var winner  = document.getElementById('team_name'+team_count).textContent;
-    
-    document.getElementById('congratulations').innerHTML = "Congratulations, "+winner;
+    var winner = document.getElementById('team_name' + team_count).textContent;
+
+    document.getElementById('congratulations').innerHTML = "Congratulations, " + winner;
 }
 
 
@@ -85,7 +86,7 @@ function shuffleAnswers(arra1) {
         arra1[index] = temp;
     }
     console.log(arra1);
-    console.log("Correct Answer: " + jsondata.results[question_count].correct_answer )
+    console.log("Correct Answer: " + jsondata.results[question_count].correct_answer)
     return arra1;
 }
 
@@ -139,7 +140,7 @@ function nextQuestion() {
 
     } else if (jsondata.results[question_count].type == "boolean") {
 
-       // document.getElementById('true_false_buttons').style.visibility = 'visible';
+        // document.getElementById('true_false_buttons').style.visibility = 'visible';
         document.getElementById('true').style.visibility = 'visible';
         document.getElementById('false').style.visibility = 'visible';
         document.getElementById('butt1').style.visibility = 'hidden';
@@ -165,16 +166,25 @@ function checkAnswer(ans) {
     if (ans == 'A') {
         let = btnA = document.querySelector('#butt1');
         guess = decodeHtml(document.getElementById("ans1").innerText);
-        if (guess.includes(correct.trim()))  {
+        if (guess.includes(correct.trim())) {
             addOne('team' + team_count + '_score')
             btnA.style.backgroundColor = '#7CFC00';
             //alertify.success('Correct !!!');
-            notie.alert({ type: 'success', text: 'Correct!', time: 2, position: 'bottom' })
+            notie.alert({
+                type: 'success',
+                text: 'Correct!',
+                time: 2,
+                position: 'bottom'
+            })
         } else {
             btnA.style.backgroundColor = '#FF0000';
             alertify.message("Answer: " + correct);
-           // alertify.error('Wrong!!!');
-            notie.alert({ type: 3, text: 'Wrong.', position: 'bottom' })
+            // alertify.error('Wrong!!!');
+            notie.alert({
+                type: 3,
+                text: 'Wrong.',
+                position: 'bottom'
+            })
 
         }
     }
@@ -184,29 +194,47 @@ function checkAnswer(ans) {
         if (guess.includes(correct.trim())) {
             addOne('team' + team_count + '_score')
             btnB.style.backgroundColor = '#7CFC00';
-           // alertify.success('Correct !!!');
-            notie.alert({ type: 'success', text: 'Correct!', time: 2, position: 'bottom' })
+            // alertify.success('Correct !!!');
+            notie.alert({
+                type: 'success',
+                text: 'Correct!',
+                time: 2,
+                position: 'bottom'
+            })
         } else {
             btnB.style.backgroundColor = '#FF0000';
             alertify.message("Answer: " + correct);
-           // alertify.error('Wrong!!!');
-            notie.alert({ type: 3, text: 'Wrong.', position: 'bottom' })
+            // alertify.error('Wrong!!!');
+            notie.alert({
+                type: 3,
+                text: 'Wrong.',
+                position: 'bottom'
+            })
 
         }
     }
     if (ans == 'C') {
         let = btnC = document.querySelector('#butt3');
         guess = decodeHtml(document.getElementById("ans3").innerText);
-        if (guess.includes(correct.trim()))  {
+        if (guess.includes(correct.trim())) {
             addOne('team' + team_count + '_score')
             btnC.style.backgroundColor = '#7CFC00';
             // alertify.success('Correct !!!');
-            notie.alert({ type: 'success', text: 'Correct!', time: 2, position: 'bottom' })
+            notie.alert({
+                type: 'success',
+                text: 'Correct!',
+                time: 2,
+                position: 'bottom'
+            })
         } else {
             btnC.style.backgroundColor = '#FF0000';
             alertify.message("Answer: " + correct);
-           // alertify.error('Wrong!!!');
-            notie.alert({ type: 3, text: 'Wrong!', position: 'bottom' })
+            // alertify.error('Wrong!!!');
+            notie.alert({
+                type: 3,
+                text: 'Wrong!',
+                position: 'bottom'
+            })
 
         }
     }
@@ -217,12 +245,21 @@ function checkAnswer(ans) {
             addOne('team' + team_count + '_score')
             btnD.style.backgroundColor = '#7CFC00';
             // alertify.success('Correct !!!');
-            notie.alert({ type: 'success', text: 'Correct!', time: 2, position: 'bottom' })
+            notie.alert({
+                type: 'success',
+                text: 'Correct!',
+                time: 2,
+                position: 'bottom'
+            })
         } else {
             btnD.style.backgroundColor = '#FF0000';
             alertify.message("Answer: " + correct);
             //alertify.error('Wrong!!!');
-            notie.alert({ type: 3, text: 'Wrong.', position: 'bottom' })
+            notie.alert({
+                type: 3,
+                text: 'Wrong.',
+                position: 'bottom'
+            })
 
         }
     }
@@ -233,7 +270,7 @@ function checkAnswer(ans) {
 
 }
 
-function escapeHtml(str){
+function escapeHtml(str) {
     var map = {
         '&': '&amp;',
         '<': '&lt;',
@@ -241,22 +278,24 @@ function escapeHtml(str){
         '"': '&quot;',
         "'": '&#039;'
     };
-    return str.replace(/[&<>"']/g, function(m) {return map[m];});
+    return str.replace(/[&<>"']/g, function(m) {
+        return map[m];
+    });
 }
 
-function decodeHtml(str)
-{
-    var map =
-    {
+function decodeHtml(str) {
+    var map = {
         '&amp;': '&',
-        '&euml;':'ë',
+        '&euml;': 'ë',
         '&ouml': 'ö',
         '&lt;': '<',
         '&gt;': '>',
         '&quot;': '"',
         '&#039;': "'"
     };
-    return str.replace(/&amp;|&lt;|&gt;|&quot;|&#039;/g, function(m) {return map[m];});
+    return str.replace(/&amp;|&lt;|&gt;|&quot;|&#039;/g, function(m) {
+        return map[m];
+    });
 }
 
 function trueOrFalse(guess) {
@@ -264,11 +303,20 @@ function trueOrFalse(guess) {
         // alert("That is TRUE !!!! "+guess+" == " +jsondata.results[question_count].correct_answer)
         addOne('team' + team_count + '_score')
         // alertify.success('True, Well Done !!!');
-        notie.alert({ type: 'success', text: 'Correct!', time: 2, position: 'bottom' })
+        notie.alert({
+            type: 'success',
+            text: 'Correct!',
+            time: 2,
+            position: 'bottom'
+        })
     } else {
         // alert("Wrong !!!! "+guess+" == " +jsondata.results[question_count].correct_answer)
         //alertify.error('False, You Idiot !!!');
-         notie.alert({ type: 3, text: 'Wrong.', position: 'bottom' })
+        notie.alert({
+            type: 3,
+            text: 'Wrong.',
+            position: 'bottom'
+        })
     }
     question_count++;
     setTimeout(nextQuestion, 3000)
@@ -278,9 +326,10 @@ function trueOrFalse(guess) {
 function startGame() {
     document.getElementById("team_div1").style.border = "3px solid green";
     document.getElementById("team_div1").style.borderRadius = "10px";
-     document.getElementById("dropdownMenuButton").disabled=true;  
-     document.getElementById("start_btn").disabled=true;
-     document.getElementById("add_btn").disabled=true;
+    document.getElementById("dropdownMenuButton").disabled = true;
+    document.getElementById("start_btn").disabled = true;
+    document.getElementById("add_btn").disabled = true;
+    document.getElementById("raceBtn").disabled = true;
 
     document.getElementById('question_container').style.visibility = 'visible';
     getData();
@@ -349,8 +398,6 @@ function pickCategory(cat) {
 
 
 
-function openWinnerTab()
-{
+function openWinnerTab() {
     window.location = 'winner.html';
 }
-
