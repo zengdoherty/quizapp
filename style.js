@@ -75,6 +75,7 @@ function getData() {
         });
 }
 
+
 function shuffleAnswers(arra1) {
     var ctr = arra1.length,
         temp, index;
@@ -268,19 +269,6 @@ function checkAnswer(ans) {
     setTimeout(nextQuestion, 3000)
     whos_turn(teamId)
 
-}
-
-function escapeHtml(str) {
-    var map = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#039;'
-    };
-    return str.replace(/[&<>"']/g, function(m) {
-        return map[m];
-    });
 }
 
 
