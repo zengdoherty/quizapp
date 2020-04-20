@@ -7,3 +7,8 @@
 ## Step Two: Select a category
 
 ## Step Three: Pick the target for the team to win !!!
+
+## Step Four: Start
+
+![Quiz App Dashboard winner screen](images/screenshot_quiz_win.png)
+
