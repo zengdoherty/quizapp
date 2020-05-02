@@ -13,7 +13,7 @@ function createTeamRow() {
     newDiv.classList.add('row');
     var attach = document.getElementById('main_container');
     var team = document.getElementById("team_name_field").value;
-    newDiv.innerHTML = '<div class="col-sm-8" id="team_div' + teamId + '"><h3 id="team_name' + teamId + '">' + team + '</h3></div><div class="col-sm-2"><h3 id="team' + count + '_score">0</h3></div>';
+    newDiv.innerHTML = '<div class="col-sm-2" id="start_div"><button class="btn btn-primary" id="fifty-fifty'+teamId+'" onclick="fiftyFifty('+teamId+')">50/50</button></div><div class="col-sm-8" id="team_div' + teamId + '"><h3 id="team_name' + teamId + '">' + team + '</h3></div><div class="col-sm-2"><h3 id="team' + count + '_score">0</h3></div>';
     count++;
     attach.appendChild(newDiv);
 
@@ -21,6 +21,37 @@ function createTeamRow() {
 
     var team = document.getElementById("team_name_field").value;
     document.getElementById("team_form").reset();
+
+}
+
+function fiftyFifty(id){
+    document.getElementById('fifty-fifty'+id).disabled = true;
+    document.getElementById('fifty-fifty'+id).style.backgroundColor = '#33334d';
+    var correct = decodeHtml(jsondata.results[question_count].correct_answer);
+var count = 0;
+        var a = document.getElementById("ans1").textContent;
+        var b = document.getElementById("ans2").textContent;
+        var c = document.getElementById("ans3").textContent;
+        var d = document.getElementById("ans4").textContent;
+        if(correct != a && count < 2){
+            document.getElementById('ans1').innerHTML = "";
+            count++;
+        }
+        if(correct != b && count < 2){
+            document.getElementById('ans2').innerHTML = "";
+            count++;
+        }
+        if(correct != c && count < 2){
+            document.getElementById('ans3').innerHTML = "";
+            count++;
+        }
+        if(correct != d && count < 2){
+            document.getElementById('ans4').innerHTML = "";
+            count++;
+        }
+
+
+
 
 }
 
