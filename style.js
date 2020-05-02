@@ -99,6 +99,7 @@ function add_to_count() {
 }
 
 function nextQuestion() {
+    jsondata = shuffleAnswers(jsondata);
     //Reset Button Colors after each question
     var but1 = document.getElementById('butt1');
     var but2 = document.getElementById('butt2');
