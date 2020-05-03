@@ -1,6 +1,6 @@
 # Quiz Dashboard for hosting quizzes remotely over on a web browser through Zoom and other video confrencing software
 
-![Quiz App Dashboard](images/quizapp.png)
+![Quiz App Dashboard](images/quizapp_one.png)
 
 
 ## Step One: Add all the teams 
