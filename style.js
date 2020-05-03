@@ -18,7 +18,6 @@ function createTeamRow() {
     attach.appendChild(newDiv);
 
 
-
     var team = document.getElementById("team_name_field").value;
     document.getElementById("team_form").reset();
 
@@ -28,7 +27,7 @@ function fiftyFifty(id){
     document.getElementById('fifty-fifty'+id).disabled = true;
     document.getElementById('fifty-fifty'+id).style.backgroundColor = '#33334d';
     var correct = decodeHtml(jsondata.results[question_count].correct_answer);
-var count = 0;
+    var count = 0;
         var a = document.getElementById("ans1").textContent;
         var b = document.getElementById("ans2").textContent;
         var c = document.getElementById("ans3").textContent;
@@ -50,14 +49,10 @@ var count = 0;
             count++;
         }
 
-
-
-
 }
 
 function setUp() {
     document.getElementById('question_container').style.visibility = 'hidden';
-    // document.getElementById('true_false_buttons').style.visibility = 'hidden';
     document.getElementById('true').style.visibility = 'hidden';
     document.getElementById('false').style.visibility = 'hidden';
 
@@ -69,7 +64,6 @@ function setRaceGoal(num) {
     document.getElementById('race_target').innerHTML = "Race to " + goal;
 
 }
-
 
 function addOne(team) {
     var num = parseInt(document.getElementById(team).innerHTML);
@@ -89,7 +83,6 @@ function winnerModal() {
 
     document.getElementById('congratulations').innerHTML = "Congratulations, " + winner+". You are the winner !!!";
 }
-
 
 let jsondata;
 
@@ -170,6 +163,8 @@ function nextQuestion() {
         document.getElementById('ans3').innerHTML = shuffled[2]
         document.getElementById('ans4').innerHTML = shuffled[3]
 
+        // whos_turn(teamId)
+
 
     } else if (jsondata.results[question_count].type == "boolean") {
 
@@ -188,6 +183,8 @@ function nextQuestion() {
         document.getElementById('question').innerHTML = q;
 
         console.log("Boolean == " + jsondata.results[question_count].correct_answer)
+
+        // whos_turn(teamId)
 
     }
 }
@@ -296,10 +293,11 @@ function checkAnswer(ans) {
 
         }
     }
+    setTimeout(whos_turn(teamId), 3000);
     question_count++;
 
-    setTimeout(nextQuestion, 3000)
-    whos_turn(teamId)
+    setTimeout(nextQuestion, 3000);
+    
 
 }
 
@@ -322,22 +320,23 @@ function trueOrFalse(guess) {
             position: 'bottom'
         })
     } else {
-        // alert("Wrong !!!! "+guess+" == " +jsondata.results[question_count].correct_answer)
-        //alertify.error('False, You Idiot !!!');
         notie.alert({
             type: 3,
             text: 'Wrong.',
             position: 'bottom'
         })
     }
+    setTimeout(whos_turn(teamId), 3000);
     question_count++;
-    setTimeout(nextQuestion, 3000)
-    whos_turn(teamId)
+    setTimeout(nextQuestion, 3000);
+    
 }
 
 function startGame() {
     document.getElementById("team_div1").style.border = "3px solid green";
     document.getElementById("team_div1").style.borderRadius = "10px";
+    document.getElementById("team_div1").style.backgroundColor = "green";
+
     document.getElementById("dropdownMenuButton").disabled = true;
     document.getElementById("start_btn").disabled = true;
     document.getElementById("add_btn").disabled = true;
@@ -349,10 +348,10 @@ function startGame() {
 }
 var team_count = 1;
 
-function whos_turn(teamId) {
+ function whos_turn(teamId) {
     document.getElementById("team_div" + team_count).style.border = "3px solid #33334d";
     document.getElementById("team_div" + team_count).style.borderRadius = "10px";
-
+    document.getElementById("team_div" + team_count).style.backgroundColor = "#33334d";
     if (team_count == teamId) {
         team_count = 1;
     } else {
@@ -360,6 +359,8 @@ function whos_turn(teamId) {
     }
     document.getElementById("team_div" + team_count).style.border = "3px solid green";
     document.getElementById("team_div" + team_count).style.borderRadius = "10px";
+    document.getElementById("team_div" + team_count).style.backgroundColor = "green";
+
 
 }
 
@@ -413,3 +414,4 @@ function pickCategory(cat) {
 function openWinnerTab() {
     window.location = 'winner.html';
 }
+

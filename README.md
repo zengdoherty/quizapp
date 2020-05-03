@@ -2,6 +2,7 @@
 
 ![Quiz App Dashboard](images/screenshot_quiz.png)
 
+
 ## Step One: Add all the teams 
 
 ## Step Two: Select a category
