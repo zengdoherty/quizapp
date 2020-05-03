@@ -100,6 +100,21 @@ a:hover {
   color: white;
 }
 
+#leftz{
+  float: right;
+}
+
+#heading_text{
+  font-stretch: expanded;
+  font-size: 230%;
+  letter-spacing: 28px;
+  overflow: visible;
+  white-space: nowrap;
+  font-family: 'Staatliches', cursive;
+  text-align: left;
+}
+
+
 #ans {
   vertical-align: middle;
   padding: 12px;
@@ -174,6 +189,7 @@ h5 {
 }
 
 #header {
+
   background: #668cff;
   width: 100px;
   height: 100px;
