@@ -333,9 +333,9 @@ function trueOrFalse(guess) {
 }
 
 function startGame() {
-    document.getElementById("team_div1").style.border = "3px solid green";
+    document.getElementById("team_div1").style.border = "1px solid #668cff";
     document.getElementById("team_div1").style.borderRadius = "10px";
-    document.getElementById("team_div1").style.backgroundColor = "green";
+    document.getElementById("team_div1").style.background = "radial-gradient(circle, rgba(51,51,77,1) 22%, rgba(102,140,255,1) 98%, rgba(102,140,255,1) 100%)";
 
     document.getElementById("dropdownMenuButton").disabled = true;
     document.getElementById("start_btn").disabled = true;
@@ -349,17 +349,18 @@ function startGame() {
 var team_count = 1;
 
  function whos_turn(teamId) {
-    document.getElementById("team_div" + team_count).style.border = "3px solid #33334d";
+    document.getElementById("team_div" + team_count).style.border = "1px solid #33334d";
     document.getElementById("team_div" + team_count).style.borderRadius = "10px";
-    document.getElementById("team_div" + team_count).style.backgroundColor = "#33334d";
+   // document.getElementById("team_div" + team_count).style.backgroundColor = "#33334d";
+    document.getElementById("team_div" + team_count).style.background = "#33334d";
     if (team_count == teamId) {
         team_count = 1;
     } else {
         team_count = team_count + 1;
     }
-    document.getElementById("team_div" + team_count).style.border = "3px solid green";
+    document.getElementById("team_div" + team_count).style.border = "1px solid #668cff";
     document.getElementById("team_div" + team_count).style.borderRadius = "10px";
-    document.getElementById("team_div" + team_count).style.backgroundColor = "green";
+    document.getElementById("team_div" + team_count).style.background = "radial-gradient(circle, rgba(51,51,77,1) 22%, rgba(102,140,255,1) 98%, rgba(102,140,255,1) 100%)";
 
 
 }

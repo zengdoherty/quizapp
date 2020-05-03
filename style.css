@@ -23,6 +23,10 @@ body {
   border-bottom: 1px solid #668cff;
 }
 
+.btn-primary{
+  background: #668cff;
+}
+
 #question_div {
   vertical-align: middle;
   border-bottom: 1px solid #668cff;
@@ -41,7 +45,7 @@ body {
 }
 
 #raceBtn{
-    margin-top: : 20px;
+  margin-top: : 20px;
   background: #33334d;
   color: white;
   border: 1px solid white;
