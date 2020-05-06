@@ -8,6 +8,11 @@ body {
   background: #33334d;
 }
 
+#zenimage{
+    display:block;
+    margin:auto;
+}
+
 #team_name {
   color: white;
   text-align: center;
