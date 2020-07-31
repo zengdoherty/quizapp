@@ -13,7 +13,10 @@ function createTeamRow() {
     newDiv.classList.add('row');
     var attach = document.getElementById('main_container');
     var team = document.getElementById("team_name_field").value;
-    newDiv.innerHTML = '<div class="col-sm-2" id="start_div"><button class="btn btn-primary" id="fifty-fifty'+teamId+'" onclick="fiftyFifty('+teamId+')">50/50</button></div><div class="col-sm-8" id="team_div' + teamId + '"><h3 id="team_name' + teamId + '">' + team + '</h3></div><div class="col-sm-2"><h3 id="team' + count + '_score">0</h3></div>';
+    newDiv.innerHTML = '<div class="col-sm-2" id="start_div"><button class="btn btn-primary" id="fifty-fifty'
+                        +teamId+'" onclick="fiftyFifty('+teamId+')">50/50</button></div><div class="col-sm-8" id="team_div'
+                        + teamId + '"><h3 id="team_name' + teamId + '">' + team + '</h3></div><div class="col-sm-2"><h3 style="font-size: 200%;" id="team'
+                        + count + '_score">0</h3></div>';
     count++;
     attach.appendChild(newDiv);
 
@@ -297,7 +300,7 @@ function checkAnswer(ans) {
     question_count++;
 
     setTimeout(nextQuestion, 3000);
-    
+
 
 }
 
@@ -329,7 +332,7 @@ function trueOrFalse(guess) {
     setTimeout(whos_turn(teamId), 3000);
     question_count++;
     setTimeout(nextQuestion, 3000);
-    
+
 }
 
 function startGame() {
@@ -365,7 +368,7 @@ var team_count = 1;
 
 }
 
-var url = "https://opentdb.com/api.php?amount=50";
+var url = "ß/api.php?amount=50";
 
 function pickCategory(cat) {
     var x;
@@ -404,6 +407,14 @@ function pickCategory(cat) {
         x = document.getElementById("cat_16").textContent;
     } else if (cat === 25) {
         x = document.getElementById("cat_17").textContent;
+    } else if (cat === 27) {
+        x = document.getElementById("cat_18").textContent;
+    } else if (cat === 28) {
+        x = document.getElementById("cat_19").textContent;
+    } else if (cat === 31) {
+        x = document.getElementById("cat_20").textContent;
+    } else if (cat === 32) {
+        x = document.getElementById("cat_21").textContent;
     }
 
     document.getElementById('category_title').innerHTML = x;
@@ -415,4 +426,3 @@ function pickCategory(cat) {
 function openWinnerTab() {
     window.location = 'winner.html';
 }
-
